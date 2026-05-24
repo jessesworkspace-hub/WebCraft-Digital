@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harper & Co. Salon — Albany, NY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;min-height:100%;font-family:'Raleway',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden}
+#hero{min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1400&q=80');background-size:cover;background-position:center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,5,15,0.92) 0%,rgba(10,5,15,0.75) 50%,rgba(10,5,15,0.3) 100%);z-index:1}
+nav{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:26px 60px;border-bottom:1px solid rgba(201,169,110,0.15)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:#c9a96e;letter-spacing:0.08em;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:38px;list-style:none}
+.nav-links a{font-size:.8rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.7);text-decoration:none;transition:color .25s}
+.nav-links a:hover{color:#c9a96e}
+.nav-cta{background:#d4a0b5;color:#fff;font-family:'Raleway',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:11px 24px;border:none;border-radius:4px;cursor:pointer;text-decoration:none;transition:background .25s}
+.nav-cta:hover{background:#c48fa4}
+.hero-body{position:relative;z-index:2;flex:1;display:flex;align-items:center;padding:72px 60px 90px;max-width:55%}
+.hero-content{display:flex;flex-direction:column}
+.hero-label{font-size:.75rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#c9a96e;margin-bottom:22px;opacity:.9}
+.hero-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5.5vw,5.2rem);font-weight:600;line-height:1.06;color:#fff;margin-bottom:28px;letter-spacing:-.01em}
+.hero-headline em{font-style:italic;color:#d4a0b5}
+.hero-subtext{font-size:1rem;color:rgba(255,255,255,0.65);line-height:1.8;max-width:480px;margin-bottom:44px;font-weight:400}
+.hero-btns{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:48px}
+.btn-primary{background:#d4a0b5;color:#fff;font-family:'Raleway',sans-serif;font-size:.875rem;font-weight:600;letter-spacing:.04em;padding:14px 28px;border:none;border-radius:4px;cursor:pointer;text-decoration:none;transition:background .25s,box-shadow .25s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:#c48fa4;box-shadow:0 4px 20px rgba(212,160,181,0.35)}
+.btn-outline{background:transparent;color:#fff;font-family:'Raleway',sans-serif;font-size:.875rem;font-weight:500;letter-spacing:.04em;padding:13px 26px;border:1.5px solid rgba(255,255,255,0.35);border-radius:4px;cursor:pointer;text-decoration:none;transition:border-color .25s,background .25s}
+.btn-outline:hover{border-color:#c9a96e;background:rgba(201,169,110,0.08);color:#c9a96e}
+.trust-items{display:flex;flex-direction:column;gap:10px}
+.trust-item{font-size:.82rem;color:rgba(255,255,255,0.55);letter-spacing:.04em;display:flex;align-items:center;gap:10px}
+.trust-item span{color:#c9a96e;font-size:.9rem}
+@media(max-width:900px){nav{padding:18px 24px}.nav-links,.nav-cta{display:none}.hero-body{max-width:100%;padding:48px 24px 60px}#hero{background-position:70% center}}
+</style>
+</head>
+<body>
+<section id="hero">
+  <div class="hero-overlay"></div>
+  <nav>
+    <a href="#" class="nav-logo">Harper &amp; Co.</a>
+    <ul class="nav-links">
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Book</a></li>
+    </ul>
+    <a href="#" class="nav-cta">Book Now</a>
+  </nav>
+  <div class="hero-body">
+    <div class="hero-content">
+      <div class="hero-label">Albany's Premier Hair Studio</div>
+      <h1 class="hero-headline">Where Style<br>Meets <em>Confidence</em></h1>
+      <p class="hero-subtext">Full-service hair, color, and styling studio. Walk in looking good &mdash; walk out feeling unstoppable.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-primary">Book Your Appointment &rarr;</a>
+        <a href="#" class="btn-outline">View Our Work</a>
+      </div>
+      <div class="trust-items">
+        <div class="trust-item"><span>&#10022;</span> Hair &amp; Color Specialists</div>
+        <div class="trust-item"><span>&#10022;</span> Online Booking</div>
+        <div class="trust-item"><span>&#10022;</span> All Hair Types Welcome</div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

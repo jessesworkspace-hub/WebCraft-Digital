@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebCraft Digital — Websites for Local Businesses</title>
+<meta name="description" content="WebCraft Digital builds stunning, high-performance websites for local service businesses. Built to rank on Google, convert visitors, and grow your revenue.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{--cy:#00d4ff;--cy2:#0099cc;--cg:rgba(0,212,255,.25);--cgs:rgba(0,212,255,.5);--bg:#000;--bg2:#060810;--bg3:#0a0f1a;--bcard:rgba(255,255,255,.03);--bd:rgba(0,212,255,.15);--bdb:rgba(0,212,255,.4);--tx:#f0f4ff;--txd:#a8b8cc;--wh:#fff;--fd:'Playfair Display',serif;--fb:'Outfit',sans-serif;--mx:1200px;--nh:80px;--lbg:#f5f9ff;--lbg2:#eef4ff;--ltx:#0b1220;--ltxd:#253042;--lbd:rgba(0,150,200,.18);--lbdb:rgba(0,150,200,.4);--lcard:#ffffff}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:var(--fb);overflow-x:hidden}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--cy2);border-radius:3px}
+#cvs{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.55}
+.wrap{max-width:var(--mx);margin:0 auto;padding:0 40px}
+.sec{padding:120px 0;position:relative}
+.lbl{display:inline-flex;align-items:center;gap:10px;font-size:.95rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cy);margin-bottom:18px}
+.h2{font-family:var(--fd);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;line-height:1.15;color:var(--wh);margin-bottom:18px}
+.h2 em{color:var(--cy);font-style:normal}
+.desc{font-size:1.05rem;color:var(--txd);line-height:1.75;max-width:560px}
+.bp{display:inline-flex;align-items:center;gap:10px;background:var(--cy);color:#000;font-family:var(--fb);font-weight:600;font-size:.9rem;padding:14px 30px;border:none;cursor:pointer;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));transition:all .3s;text-decoration:none;position:relative;overflow:hidden}
+.bp::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.15);opacity:0;transition:opacity .3s}
+.bp:hover::after{opacity:1}
+.bp:hover{box-shadow:0 0 40px var(--cgs);transform:translateY(-2px)}
+.bo{display:inline-flex;align-items:center;gap:10px;border:1.5px solid var(--bdb);color:var(--cy);font-family:var(--fb);font-weight:500;font-size:.9rem;padding:13px 28px;cursor:pointer;background:transparent;transition:all .3s;text-decoration:none;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}
+.bo:hover{background:var(--cg);border-color:var(--cy);box-shadow:0 0 25px var(--cg)}
+.rv{opacity:0;transform:translateY(40px)}.rv.on{opacity:1;transform:translateY(0);transition:opacity .7s ease,transform .7s ease}
+.rl{opacity:0;transform:translateX(-50px)}.rl.on{opacity:1;transform:translateX(0);transition:opacity .8s ease,transform .8s ease}
+.rr{opacity:0;transform:translateX(50px)}.rr.on{opacity:1;transform:translateX(0);transition:opacity .8s ease,transform .8s ease}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nh);display:flex;align-items:center;padding:0 40px;transition:background .4s,box-shadow .4s}
+nav.sc{background:rgba(0,0,0,.92);backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--bd)}
+.nlo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.nic{width:44px;height:44px;background:#000;border:1.5px solid var(--cy);border-radius:6px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 14px var(--cg)}
+.ntt{display:flex;flex-direction:column;line-height:1}
+.ntt .a{font-family:var(--fd);font-weight:700;font-size:.98rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cy)}
+.ntt .b{font-family:var(--fd);font-weight:600;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cy);opacity:.8}
+.nul{display:flex;align-items:center;gap:36px;list-style:none;margin:0 auto}
+.nul a{font-size:.84rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--wh);text-decoration:none;position:relative;transition:color .3s}
+.nul a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--cy);transition:width .3s}
+.nul a:hover{color:var(--cy)}.nul a:hover::after{width:100%}
+.nbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
+.nbg span{display:block;width:24px;height:2px;background:var(--cy);border-radius:2px}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:var(--nh);background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,180,220,.18) 0%,transparent 55%),linear-gradient(160deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.55) 50%,rgba(0,0,0,.78) 100%),url('https://images.unsplash.com/photo-1759661990336-51bd4b951fea?w=1920&q=85') center/cover no-repeat}
+.hgb{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(0,212,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 70% 80% at 50% 50%,black 40%,transparent 100%)}
+.hcon{position:relative;z-index:2;max-width:var(--mx);margin:0 auto;padding:60px 40px 0;width:100%;display:flex;flex-direction:column;align-items:flex-start}
+.hey{display:inline-flex;align-items:center;gap:10px;background:rgba(0,212,255,.08);border:1px solid var(--bdb);padding:7px 16px;border-radius:100px;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cy);margin-bottom:30px}
+.hdot{width:6px;height:6px;background:var(--cy);border-radius:50%;animation:pd 2s infinite}
+@keyframes pd{0%,100%{box-shadow:0 0 0 0 var(--cgs)}50%{box-shadow:0 0 0 6px rgba(0,212,255,0)}}
+.htl{font-family:var(--fd);font-size:clamp(2.4rem,5vw,4.2rem);font-weight:900;line-height:1.08;color:var(--wh);margin-bottom:28px}
+.htl .ln{overflow:hidden;display:block}.htl .wd{display:inline-block}.htl .cy{color:var(--cy)}
+.hsb{font-size:1.1rem;color:var(--txd);line-height:1.75;max-width:580px;margin-bottom:44px}
+.hac{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.hbg{display:flex;align-items:center;gap:10px;font-size:.82rem;color:var(--txd)}
+.hbg .ck{width:20px;height:20px;background:rgba(0,212,255,.12);border:1px solid var(--bdb);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--cy);font-size:.65rem;flex-shrink:0}
+.hbs{display:flex;flex-direction:column;gap:10px;margin-top:40px}
+.hri{position:relative}
+.hiw{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 0 0 1px var(--bd),0 40px 80px rgba(0,0,0,.7),0 0 80px rgba(0,212,255,.12)}
+.hiw img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.85) saturate(.9)}
+.hov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,212,255,.05) 0%,transparent 50%);pointer-events:none}
+.hfc{position:absolute;background:rgba(6,8,16,.95);border:1px solid var(--bdb);border-radius:8px;padding:16px 20px;backdrop-filter:blur(20px);box-shadow:0 20px 40px rgba(0,0,0,.5);animation:fl 4s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hfc.c1{bottom:-24px;left:-32px;min-width:180px}.hfc.c2{top:-24px;right:-24px}
+.hfc .fl{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--txd);margin-bottom:6px}
+.hfc .fv{font-family:var(--fd);font-size:1.5rem;font-weight:700;color:var(--cy);line-height:1}
+.hfc .fs{font-size:.78rem;color:var(--txd);margin-top:2px}
+.hfc .fst{color:#ffd700;font-size:.8rem;letter-spacing:2px;margin-bottom:4px}
+.hscr{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--txd);z-index:3;animation:bs 2s infinite}
+.hscr .ar{width:20px;height:20px;border-right:1.5px solid var(--cy);border-bottom:1.5px solid var(--cy);transform:rotate(45deg);opacity:.7}
+@keyframes bs{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+
+/* TICKER */
+.tkw{background:var(--cy);padding:14px 0;overflow:hidden}
+.tkt{display:flex;gap:60px;white-space:nowrap;animation:tk 25s linear infinite;width:max-content}
+.tkt:hover{animation-play-state:paused}
+@keyframes tk{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ti{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:#000;flex-shrink:0}
+
+/* SERVICES */
+#srv{background:var(--bg2)}
+.shdg{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:70px}
+.sgd{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.sc{background:var(--bcard);border:1px solid var(--bd);padding:40px 36px;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
+.sc::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--cg) 0%,transparent 60%);opacity:0;transition:opacity .4s}
+.sc:hover{border-color:var(--bdb);transform:translateY(-4px)}
+.sc:hover::before{opacity:1}
+.sno{font-family:var(--fd);font-size:3rem;font-weight:900;color:var(--wh);position:absolute;top:20px;right:28px;pointer-events:none}
+.si{width:52px;height:52px;background:rgba(0,212,255,.08);border:1px solid var(--bdb);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:24px;transition:background .3s,box-shadow .3s}
+.sc:hover .si{background:rgba(0,212,255,.15);box-shadow:0 0 20px var(--cg)}
+.sc h3{font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--wh);margin-bottom:14px}
+.sc p{font-size:.92rem;color:var(--txd);line-height:1.7}
+.slm{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--cy);text-decoration:none;margin-top:24px;transition:gap .3s}
+.sc:hover .slm{gap:10px}
+
+/* ABOUT */
+#abt{background:var(--lbg2);overflow:hidden}
+.agd{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+.aim{position:relative;border-radius:4px;box-shadow:0 40px 80px rgba(0,0,0,.5)}
+.aim img{width:100%;height:520px;object-fit:cover;border-radius:4px;border:1px solid var(--bd);filter:brightness(.85) saturate(.85);display:block}
+.adc{position:absolute;bottom:-20px;right:-20px;width:calc(100% - 40px);height:calc(100% - 40px);border:1px solid var(--bdb);border-radius:4px;pointer-events:none;z-index:-1}
+.abg{position:absolute;top:28px;right:-28px;background:var(--wh);border:1px solid var(--lbdb);border-radius:8px;padding:20px 24px;text-align:center;box-shadow:0 20px 40px rgba(0,0,0,.12)}
+.abg .av{font-family:var(--fd);font-size:2.4rem;font-weight:900;color:var(--cy2);line-height:1;display:block}
+.abg .al{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ltxd);margin-top:4px}
+.strow{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:50px;padding-top:50px;border-top:1px solid var(--bd)}
+.stnum{font-family:var(--fd);font-size:2.6rem;font-weight:900;color:var(--cy);line-height:1;display:flex;align-items:baseline;gap:2px}
+.stnum .sfx{font-size:1.5rem}
+.stlb{font-size:.82rem;color:var(--txd);margin-top:6px;text-transform:uppercase;letter-spacing:.08em}
+
+/* PORTFOLIO */
+#pf{background:var(--bg3)}
+.pflt{display:flex;gap:8px;flex-wrap:wrap;margin-top:36px}
+.fb{padding:8px 20px;font-family:var(--fb);font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;background:transparent;border:1px solid var(--bd);color:var(--txd);cursor:pointer;transition:all .3s;border-radius:2px}
+.fb.on,.fb:hover{background:var(--cy);border-color:var(--cy);color:#000}
+.pgd{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:48px}
+.pi{position:relative;overflow:hidden;aspect-ratio:16/9;cursor:pointer;grid-column:span 2}
+.pi:nth-child(1),.pi:nth-child(2){grid-column:span 3}
+.pi img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .6s ease,filter .4s;filter:brightness(.85) saturate(.9)}
+.pi:hover img{transform:scale(1.06);filter:brightness(.6) saturate(.9)}
+.pov{position:absolute;inset:0;padding:30px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,transparent 50%);transform:translateY(20px);opacity:.3;transition:all .4s}
+.pi:hover .pov{transform:translateY(0);opacity:1}
+.ptg{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cy);margin-bottom:8px}
+.pnm{font-family:var(--fd);font-size:1.2rem;font-weight:700;color:var(--wh)}
+.par{position:absolute;top:24px;right:24px;width:40px;height:40px;background:var(--cy);display:flex;align-items:center;justify-content:center;color:#000;transform:translate(8px,-8px) scale(.8);opacity:0;transition:all .3s}
+.pi:hover .par{transform:translate(0,0) scale(1);opacity:1}
+
+/* PROCESS */
+#prc{background:var(--bg2)}
+.prhd{text-align:center;margin-bottom:80px}
+.prhd .desc{margin:0 auto}
+.prst{display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+.prst::before{content:'';position:absolute;top:36px;left:12.5%;right:12.5%;height:1px;background:linear-gradient(90deg,transparent,var(--bdb),var(--bdb),transparent)}
+.prs{padding:0 24px;text-align:center}
+.snw{width:72px;height:72px;margin:0 auto 28px;position:relative}
+.snw .rg{position:absolute;inset:0;border-radius:50%;border:1px solid var(--bdb);animation:sr 8s linear infinite}
+.snw .rg::before{content:'';position:absolute;top:-3px;left:50%;transform:translateX(-50%);width:6px;height:6px;background:var(--cy);border-radius:50%}
+@keyframes sr{100%{transform:rotate(360deg)}}
+.sni{position:absolute;inset:8px;background:var(--bg);border:1px solid var(--bd);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1.4rem;font-weight:900;color:var(--cy)}
+.prs:nth-child(2) .rg{animation-duration:10s;animation-direction:reverse}
+.prs:nth-child(3) .rg{animation-duration:6s}
+.prs:nth-child(4) .rg{animation-duration:12s;animation-direction:reverse}
+.prs h3{font-family:var(--fd);font-size:1.15rem;font-weight:700;color:var(--wh);margin-bottom:12px}
+.prs p{font-size:.88rem;color:var(--txd);line-height:1.7}
+
+/* TESTIMONIALS */
+#tst{background:var(--lbg);overflow:hidden}
+#tst .tshd .h2{color:var(--ltx)}
+#tst .tshd .desc{color:var(--ltxd)}
+#tst .tswp::before{background:linear-gradient(90deg,var(--lbg),transparent)}
+#tst .tswp::after{background:linear-gradient(-90deg,var(--lbg),transparent)}
+#tst .tc{background:var(--wh);border-color:var(--lbd);box-shadow:0 4px 20px rgba(0,0,0,.06)}
+#tst .tc:hover{border-color:var(--lbdb)}
+#tst .tt{color:var(--ltxd)}
+#tst .tnm{color:var(--ltx)}
+.tshd{text-align:center;margin-bottom:60px}
+.tshd .desc{margin:0 auto}
+.tswp{overflow:hidden;position:relative}
+.tswp::before,.tswp::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.tswp::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.tswp::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent)}
+.tstr{display:flex;gap:28px;padding:20px 0;animation:ts 35s linear infinite;width:max-content}
+.tstr:hover{animation-play-state:paused}
+@keyframes ts{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.tc{background:var(--bcard);border:1px solid var(--bd);border-radius:4px;padding:32px 36px;width:380px;flex-shrink:0;transition:border-color .3s}
+.tc:hover{border-color:var(--bdb)}
+.tq{font-size:2rem;color:var(--cy);line-height:1;font-family:var(--fd);margin-bottom:18px;opacity:.5}
+.tt{font-size:.95rem;color:var(--txd);line-height:1.75;margin-bottom:28px}
+.tau{display:flex;align-items:center;gap:14px}
+.tav{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--bdb);flex-shrink:0}
+.tnm{font-weight:600;font-size:.9rem;color:var(--wh)}
+.tbz{font-size:.78rem;color:var(--cy)}
+.tst{color:#ffd700;font-size:.75rem;letter-spacing:2px;margin-bottom:2px}
+
+
+/* FAQ */
+#faq{background:var(--bg2)}
+.fwp{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.fls{display:flex;flex-direction:column}
+.fi{border-bottom:1px solid var(--bd);overflow:hidden}
+.fq{display:flex;align-items:center;justify-content:space-between;padding:24px 0;cursor:pointer;font-family:var(--fb);font-size:1rem;font-weight:500;color:var(--tx);background:none;border:none;width:100%;text-align:left;gap:20px;transition:color .3s}
+.fq:hover{color:var(--cy)}
+.fc{width:28px;height:28px;flex-shrink:0;border:1px solid var(--bdb);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--cy);font-size:1.2rem;transition:transform .3s,background .3s}
+.fi.op .fc{transform:rotate(45deg);background:rgba(0,212,255,.1)}
+.fa{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.fi.op .fa{max-height:300px}
+.fa p{padding-bottom:24px;font-size:.92rem;color:var(--txd);line-height:1.75}
+
+/* CONTACT */
+#ct{background:var(--bg);position:relative;overflow:hidden}
+#ct::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:800px;height:400px;background:radial-gradient(ellipse,rgba(0,212,255,.08) 0%,transparent 70%);pointer-events:none}
+.cwp{display:grid;grid-template-columns:1fr 1.2fr;gap:100px;align-items:start}
+.ci{display:flex;align-items:flex-start;gap:18px;margin-bottom:32px}
+.cicn{width:48px;height:48px;flex-shrink:0;background:rgba(0,212,255,.06);border:1px solid var(--bdb);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;transition:background .3s}
+.ci:hover .cicn{background:rgba(0,212,255,.12)}
+.cit .lb{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txd);margin-bottom:4px}
+.cit .vl{font-size:.96rem;color:var(--tx)}
+.cfm{background:var(--bcard);border:1px solid var(--bd);padding:50px 48px;position:relative}
+.cfm::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cy),transparent)}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.fg{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.fg label{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txd);font-weight:500}
+.fg input,.fg select,.fg textarea{background:rgba(255,255,255,.03);border:1px solid var(--bd);padding:13px 16px;font-family:var(--fb);font-size:.92rem;color:var(--tx);border-radius:2px;outline:none;transition:border-color .3s,box-shadow .3s;width:100%}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--txd);opacity:.5}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--cy);box-shadow:0 0 0 3px var(--cg)}
+.fg select{cursor:pointer;-webkit-appearance:none}
+.fg textarea{min-height:130px;resize:vertical}
+.fsb{width:100%;justify-content:center;font-size:.95rem;padding:16px;margin-top:8px}
+.fno{font-size:.78rem;color:var(--txd);text-align:center;margin-top:14px}
+
+/* CONTACT light overrides */
+#ct{background:var(--lbg)}
+#ct::before{background:radial-gradient(ellipse,rgba(0,150,200,.06) 0%,transparent 70%)}
+#ct .h2{color:var(--ltx)}
+#ct .h2 em{color:var(--cy2)}
+#ct .desc{color:var(--ltxd)}
+#ct .lbl{color:var(--cy2)}
+#ct .lbl::before{background:var(--cy2)}
+#ct .cit .lb{color:var(--ltxd)}
+#ct .cit .vl{color:var(--ltx)}
+#ct .cicn{background:rgba(0,150,200,.07);border-color:var(--lbdb)}
+#ct .cfm{background:var(--wh);border-color:var(--lbd);box-shadow:0 4px 40px rgba(0,0,0,.08)}
+#ct .cfm h3{color:var(--ltx)!important}
+#ct .cfm>p{color:var(--ltxd)!important}
+#ct .fg label{color:var(--ltxd)}
+#ct .fg input,#ct .fg select,#ct .fg textarea{background:var(--lbg2);border-color:var(--lbd);color:var(--ltx)}
+#ct .fg input::placeholder,#ct .fg textarea::placeholder{color:var(--ltxd);opacity:.6}
+#ct .fno{color:var(--ltxd)}
+/* FOOTER */
+footer{background:#000;border-top:1px solid var(--bd);padding-top:80px}
+.ftp{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;padding-bottom:60px;border-bottom:1px solid var(--bd)}
+.fbr p{font-size:.88rem;color:var(--txd);line-height:1.75;max-width:280px;margin-bottom:28px}
+.fsc{display:flex;gap:12px}
+.fsl{width:38px;height:38px;border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;color:var(--txd);font-size:.9rem;text-decoration:none;transition:all .3s;border-radius:2px}
+.fsl:hover{border-color:var(--cy);color:var(--cy);background:rgba(0,212,255,.07)}
+.fcl h4{font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--wh);margin-bottom:22px}
+.fcl ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.fcl ul li a{font-size:.88rem;color:var(--txd);text-decoration:none;transition:color .3s}
+.fcl ul li a:hover{color:var(--cy)}
+.fbt{padding:24px 0;display:flex;align-items:center;justify-content:space-between;font-size:.8rem;color:var(--txd)}
+
+/* ABOUT — light bg */
+#abt .h2{color:var(--ltx)}
+#abt .desc{color:var(--ltxd)}
+#abt .lbl{color:var(--cy2)}
+#abt .lbl::before{background:var(--cy2)}
+#abt .h2 em{color:var(--cy2)}
+#abt .strow{border-top-color:var(--lbd)}
+#abt .stnum{color:var(--cy2)}
+#abt .stlb{color:var(--ltxd)}
+/* LIGHT SECTIONS */
+.light{background:var(--lbg)}
+.light .h2{color:var(--ltx)}
+.light .desc{color:var(--ltxd)}
+.light .lbl{color:var(--cy2)}
+.light .lbl::before{background:var(--cy2)}
+.light .h2 em{color:var(--cy2)}
+/* service cards stay dark in light sections */
+.light .shdg .desc{color:var(--ltxd)}
+/* light process */
+.light .prst::before{background:linear-gradient(90deg,transparent,var(--lbdb),var(--lbdb),transparent)}
+.light .snw .rg{border-color:var(--lbdb)}
+.light .snw .rg::before{background:var(--cy2)}
+.light .sni{background:var(--lbg);border-color:var(--lbd);color:var(--cy2)}
+.light .prs h3{color:var(--ltx)}
+.light .prs p{color:var(--ltxd)}
+.light .prhd .h2{color:var(--ltx)}
+.light .prhd .desc{color:var(--ltxd)}
+/* light faq */
+.light .fi{border-bottom-color:var(--lbd)}
+.light .fq{color:var(--ltx)}
+.light .fq:hover{color:var(--cy2)}
+.light .fc{border-color:var(--lbdb);color:var(--cy2)}
+.light .fi.op .fc{background:rgba(0,150,200,.08)}
+.light .fa p{color:var(--ltxd)}
+.light .fwp .h2{color:var(--ltx)}
+.light .fwp .desc{color:var(--ltxd)}
+/* faq section overrides */
+#faq .h2{color:var(--cy2)}
+#faq .fwp .desc{color:var(--wh)}
+#faq .fq{color:var(--wh)}
+#faq .fa p{color:var(--wh)}
+.light .fwp .bp{background:var(--cy2)}
+.light .fwp .bp:hover{box-shadow:0 0 30px rgba(0,150,200,.4)}
+/* services section heading + desc override */
+#srv .h2{color:var(--cy2)}
+#srv .shdg .desc{color:var(--wh)}
+/* process section overrides */
+#prc .prhd .h2{color:var(--cy2)}
+#prc .prhd .desc{color:var(--wh)}
+#prc .prs h3{color:var(--cy2)}
+#prc .prs p{color:var(--wh)}
+/* light about stats */
+.light .strow{border-top-color:var(--lbd)}
+.light .stnum{color:var(--cy2)}
+.light .stlb{color:var(--ltxd)}
+.light .h2{color:var(--ltx)}
+/* NAV CTA — smaller than standard .bp */
+.ncta{font-size:.78rem!important;padding:9px 20px!important}
+
+/* SCROLL CTA BAR */
+#scbar{position:fixed;bottom:0;left:0;right:0;z-index:990;background:rgba(0,0,0,.96);backdrop-filter:blur(20px);border-top:1px solid var(--bd);padding:10px 40px;display:flex;align-items:center;gap:20px;transform:translateY(100%);transition:transform .4s ease}
+#scbar.vis{transform:translateY(0)}
+.scb-txt{font-family:var(--fd);font-size:.95rem;font-weight:600;color:var(--wh);white-space:nowrap;flex-shrink:0}
+.scb-txt em{color:var(--cy);font-style:normal}
+.scb-mid{display:flex;align-items:center;gap:14px;margin:0 auto}
+.scb-ph{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--txd);flex-shrink:0}
+.scb-ph svg{flex-shrink:0;opacity:.7}
+.scb-ph a{color:var(--cy);text-decoration:none;font-weight:600;font-size:.9rem;letter-spacing:.02em}
+.scb-ph a:hover{text-decoration:underline}
+.scb-btn{display:inline-flex;align-items:center;gap:8px;background:var(--cy);color:#000;font-family:var(--fb);font-weight:700;font-size:.78rem;padding:8px 18px;border:none;cursor:pointer;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));transition:all .3s;text-decoration:none;white-space:nowrap;flex-shrink:0}
+.scb-btn:hover{box-shadow:0 0 20px var(--cgs)}
+/* floating buttons — right side */
+#phbtn{position:fixed;right:22px;bottom:110px;z-index:991;width:42px;height:42px;background:var(--cy);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;cursor:pointer;text-decoration:none;opacity:0;transform:translateY(16px);transition:opacity .35s,transform .35s,box-shadow .3s;box-shadow:0 4px 16px rgba(0,212,255,.3)}
+#phbtn.vis{opacity:1;transform:translateY(0)}
+#phbtn:hover{box-shadow:0 4px 28px var(--cgs)}
+#bttop{position:fixed;right:22px;bottom:58px;z-index:991;width:42px;height:42px;background:rgba(6,8,16,.9);border:1px solid var(--bdb);border-radius:2px;display:flex;align-items:center;justify-content:center;color:var(--cy);cursor:pointer;opacity:0;transform:translateY(16px);transition:opacity .35s,transform .35s,background .3s}
+#bttop.vis{opacity:1;transform:translateY(0)}
+#bttop:hover{background:rgba(0,212,255,.1)}
+@media(max-width:768px){#scbar{padding:10px 16px;gap:10px}.scb-txt{display:none}.scb-mid{gap:10px}}
+@media(max-width:480px){.scb-ph .scb-label{display:none}}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.wrap{padding:0 28px}.hcon{grid-template-columns:1fr}.hri{display:none}.sgd{grid-template-columns:repeat(2,1fr)}.agd{grid-template-columns:1fr}.aim{display:none}.pgd{grid-template-columns:repeat(2,1fr)}.pi:first-child{grid-column:span 2}.prst{grid-template-columns:repeat(2,1fr);gap:50px}.prst::before{display:none}.prgd{grid-template-columns:1fr;max-width:480px;margin:0 auto}.prc.ft{transform:none}.fwp{grid-template-columns:1fr}.cwp{grid-template-columns:1fr}.ftp{grid-template-columns:1fr 1fr}.shdg{grid-template-columns:1fr;gap:20px}}
+@media(max-width:768px){.nul,.ncta{display:none}.nbg{display:flex}.sec{padding:72px 0}.sgd{grid-template-columns:1fr}.pgd{grid-template-columns:1fr}.pi:first-child{grid-column:span 1}.prst{grid-template-columns:1fr 1fr}.ftp{grid-template-columns:1fr}.fr{grid-template-columns:1fr}.cfm{padding:32px 20px}.strow{grid-template-columns:1fr 1fr}.hac{flex-direction:column;align-items:flex-start}.bp,.bo{width:100%;justify-content:center}}
+@media(max-width:480px){.wrap{padding:0 18px}nav{padding:0 18px}.htl{font-size:2.2rem}.prst{grid-template-columns:1fr;gap:40px}.prst::before{display:none}.prs{padding:0}.strow{grid-template-columns:1fr}.ftp{gap:32px}.cfm{padding:28px 16px}.tshd h2,.prhd h2{font-size:1.8rem}}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav id="nb">
+  <a href="#hero" class="nlo">
+    <div class="nic">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+        <rect x="2" y="3" width="18" height="14" rx="1.5" stroke="#00d4ff" stroke-width="1.5"/>
+        <line x1="11" y1="17" x2="11" y2="21" stroke="#00d4ff" stroke-width="1.5"/>
+        <line x1="8" y1="21" x2="14" y2="21" stroke="#00d4ff" stroke-width="1.5"/>
+        <path d="M9 7.5 C9 6.4 10.1 5.5 11.5 5.5 L11.5 11.5 L9 11.5 Z" fill="#00d4ff" opacity=".7"/>
+        <path d="M13.5 9.5 L17 6 M17 6 L17 8.2 M17 6 L14.8 6" stroke="#00d4ff" stroke-width="1.3" stroke-linecap="round"/>
+        <circle cx="21.5" cy="5" r="3.2" stroke="#00d4ff" stroke-width="1.2" fill="rgba(0,212,255,0.1)"/>
+        <line x1="21.5" y1="3.2" x2="21.5" y2="6.8" stroke="#00d4ff" stroke-width="1" stroke-linecap="round"/>
+        <line x1="19.8" y1="5" x2="23.2" y2="5" stroke="#00d4ff" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="ntt"><span class="a">WebCraft</span><span class="b">Digital</span></div>
+  </a>
+  <ul class="nul">
+    <li><a href="#srv">Services</a></li>
+    <li><a href="#abt">About</a></li>
+    <li><a href="#pf">Work</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#ct">Contact</a></li>
+  </ul>
+  <a href="#ct" class="bp ncta" style="flex-shrink:0">Get Free Quote</a>
+  <button class="nbg" onclick="tmenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="cvs"></canvas>
+  <div class="hcon">
+    <div>
+      <div class="hey"><span class="hdot"></span>Websites for Local Service Businesses</div>
+      <h1 class="htl">
+        <span class="ln"><span class="wd">We Build</span></span>
+        <span class="ln"><span class="wd cy">Websites That</span></span>
+        <span class="ln"><span class="wd">Win Customers</span></span>
+      </h1>
+      <p class="hsb">WebCraft Digital creates high-performance, stunning websites for local service businesses  - built to rank, convert, and grow your revenue.</p>
+      <div class="hac">
+        <a href="#ct" class="bp">Start My Project &rarr;</a>
+        <a href="#pf" class="bo">View Our Work</a>
+      </div>
+      <div class="hbs">
+        <div class="hbg"><span class="ck">&#10003;</span>Free preview built — no payment until you approve</div>
+        <div class="hbg"><span class="ck">&#10003;</span>Preview ready within 48 hours</div>
+        <div class="hbg"><span class="ck">&#10003;</span>100% custom built — no templates, ever</div>
+      </div>
+    </div>
+  </div>
+  <div class="hscr"><div class="ar"></div></div>
+</section>
+
+<!-- TICKER -->
+<div class="tkw" aria-hidden="true">
+  <div class="tkt">
+    <span class="ti">Web Design <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">Local SEO <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">Mobile Responsive <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">Fast Loading <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">48-Hour Preview <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">Free Preview <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">Custom Design <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">Lead Generation <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">Web Design <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">Local SEO <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">Mobile Responsive <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">Fast Loading <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">48-Hour Preview <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">Free Preview <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">Custom Design <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">Lead Generation <span style="opacity:.4">&#9670;</span></span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="srv" class="sec light">
+  <div class="wrap">
+    <div class="shdg rv">
+      <div>
+        <div class="lbl">What We Do</div>
+        <h2 class="h2">Everything Your Business<br><em>Needs Online</em></h2>
+      </div>
+      <p class="desc">We handle everything from custom design to launch and beyond  - so you can focus on running your business.</p>
+    </div>
+    <div class="sgd">
+      <div class="sc"><span class="sno">01</span><div class="si">&#127912;</div><h3>Custom Web Design</h3><p>Every site we build is 100% custom - no templates, no page builders. Hand-crafted to represent your business and convert visitors into calls.</p></div>
+      <div class="sc"><span class="sno">02</span><div class="si">&#128205;</div><h3>Free Preview First</h3><p>We build your full preview website before you pay a single dollar. You see exactly what you&apos;re getting, walk through it with us live, then decide.</p></div>
+      <div class="sc"><span class="sno">03</span><div class="si">&#128241;</div><h3>Mobile-First Build</h3><p>Every site we build looks flawless on phones, tablets, and desktops. Over 70% of your customers will find you on mobile - we make sure you impress them.</p></div>
+      <div class="sc"><span class="sno">04</span><div class="si">&#9889;</div><h3>Performance Optimized</h3><p>Lightning-fast load times mean more leads, better rankings, and customers who don&apos;t bounce before the page loads.</p></div>
+      <div class="sc"><span class="sno">05</span><div class="si">&#128172;</div><h3>All the Right Pages</h3><p>Every site includes a contact form, services section, testimonials, FAQ, and service areas page - everything a local business needs to convert visitors.</p></div>
+      <div class="sc"><span class="sno">06</span><div class="si">&#128295;</div><h3>Ongoing Support</h3><p>We stay with you after launch. Monthly maintenance keeps your site fast, updated, and secure for just $25/month.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="abt" class="sec">
+  <div class="wrap">
+    <div class="agd">
+      <div class="aim rl">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Our team">
+        <div class="adc"></div>
+        <div class="abg"><span class="av">98%</span><span class="al">Client Satisfaction</span></div>
+      </div>
+      <div class="rr">
+        <div class="lbl">About WebCraft Digital</div>
+        <h2 class="h2">We&apos;re Obsessed With<br><em>Local Business Growth</em></h2>
+        <p class="desc">We started WebCraft Digital with one mission: give local service businesses the same quality websites that big companies have  - without the big-agency price tag or the runaround.</p>
+        <p class="desc" style="margin-top:18px">Every site we build is crafted with deep knowledge of what converts local visitors into paying customers. We know local SEO, we know what your competitors are doing wrong, and we know how to make you stand out.</p>
+        <p class="desc" style="margin-top:18px">And with our free preview model, you see your finished website before you spend a dime.</p>
+        <div class="strow">
+          <div><div class="stnum"><span class="counter" data-target="150">0</span><span class="sfx">+</span></div><div class="stlb">Sites Launched</div></div>
+          <div><div class="stnum"><span class="counter" data-target="5">0</span><span class="sfx">yr</span></div><div class="stlb">In Business</div></div>
+          <div><div class="stnum"><span class="counter" data-target="100">0</span><span class="sfx">%</span></div><div class="stlb">US Based Team</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="pf" class="sec">
+  <div class="wrap">
+    <div class="rv">
+      <div class="lbl">Our Work</div>
+      <h2 class="h2">Real Sites. <em>Real Results.</em></h2>
+    </div>
+    <div class="pgd">
+      <div class="pi rv" onclick="window.open('preview-plumbing.html','_blank')"><img src="screenshot-plumbing.jpg" alt="Russo Plumbing"><div class="pov"><div class="ptg">Plumbing &middot; Lead Gen</div><div class="pnm">Russo Plumbing &amp; Drain</div></div><div class="par">&#8599;</div></div>
+      <div class="pi rv" onclick="window.open('preview-roofing.html','_blank')"><img src="screenshot-roofing.jpg" alt="Harper Ridge Roofing"><div class="pov"><div class="ptg">Roofing &middot; Lead Gen</div><div class="pnm">Harper Ridge Roofing</div></div><div class="par">&#8599;</div></div>
+      <div class="pi rv" onclick="window.open('preview-contractor.html','_blank')"><img src="screenshot-contractor.jpg" alt="Bianchi Custom Builds"><div class="pov"><div class="ptg">General Contractor &middot; Leads</div><div class="pnm">Bianchi Custom Builds</div></div><div class="par">&#8599;</div></div>
+      <div class="pi rv" onclick="window.open('preview-hvac.html','_blank')"><img src="screenshot-hvac.jpg" alt="Frost Heating &amp; Cooling"><div class="pov"><div class="ptg">HVAC &middot; Service</div><div class="pnm">Frost Heating &amp; Cooling</div></div><div class="par">&#8599;</div></div>
+      <div class="pi rv" onclick="window.open('preview-electrician.html','_blank')"><img src="screenshot-electrician.jpg" alt="Caruso Electric Co."><div class="pov"><div class="ptg">Electrician &middot; Lead Gen</div><div class="pnm">Caruso Electric Co.</div></div><div class="par">&#8599;</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="prc" class="sec light">
+  <div class="wrap">
+    <div class="prhd rv">
+      <div class="lbl">How It Works</div>
+      <h2 class="h2">From Outreach to Live in <em>Days</em></h2>
+      <p class="desc">A clear, no-risk process — you see your site before you pay a single dollar.</p>
+    </div>
+    <div class="prst">
+      <div class="prs rv"><div class="snw"><div class="rg"></div><div class="sni">1</div></div><h3>Free Preview Built</h3><p>Within 48 hours of your outreach, we build a real preview of your website - no payment, no commitment required.</p></div>
+      <div class="prs rv" style="transition-delay:.12s"><div class="snw"><div class="rg"></div><div class="sni">2</div></div><h3>Live Walkthrough Call</h3><p>We schedule a call to walk through the preview together. You see exactly what you&apos;re getting and can ask any questions.</p></div>
+      <div class="prs rv" style="transition-delay:.24s"><div class="snw"><div class="rg"></div><div class="sni">3</div></div><h3>You Approve, We Finish</h3><p>Love it? You fill out a quick intake form with your full business details and we complete your custom website.</p></div>
+      <div class="prs rv" style="transition-delay:.36s"><div class="snw"><div class="rg"></div><div class="sni">4</div></div><h3>Domain, Launch &amp; Maintain</h3><p>You purchase your domain on Namecheap, we connect everything and go live. Ongoing maintenance is just $25/month.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="tst" class="sec" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="tshd rv">
+      <div class="lbl">Client Stories</div>
+      <h2 class="h2">Businesses That <em>Trust Us</em></h2>
+      <p class="desc">Don&apos;t take our word for it  - here&apos;s what real local business owners say.</p>
+    </div>
+  </div>
+  <div class="tswp" style="margin-top:60px;padding-bottom:120px">
+    <div class="tstr">
+      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">Our phone hasn&apos;t stopped ringing since the new site launched. WebCraft delivered something incredible, and we&apos;re now #1 in Google for our area.</p><div class="tau"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&q=80" class="tav" alt="Mike T."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">Mike Torres</div><div class="tbz">Torres HVAC Services</div></div></div></div>
+      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">I was hesitant to invest in a website but WebCraft made it so easy. The site looks incredible and my bookings doubled in the first 60 days. Worth every penny.</p><div class="tau"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&q=80" class="tav" alt="Sarah K."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">Sarah Kim</div><div class="tbz">Kim&apos;s Beauty Bar</div></div></div></div>
+      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">Professional from first call to launch. Two weeks exactly like they promised. Fast, looks great on phones, and customers always comment on it.</p><div class="tau"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=96&q=80" class="tav" alt="James R."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">James Reeves</div><div class="tbz">Reeves Landscaping</div></div></div></div>
+      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">WebCraft built us a site that brings in roofing leads every week. Professional, fast, and the free preview made the decision easy.</p><div class="tau"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=96&q=80" class="tav" alt="Carlos R."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">Carlos Rivera</div><div class="tbz">Rivera Roofing</div></div></div></div>
+      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">WebCraft built us a site that actually converts. Most of our new leads come through the contact form now. The ROI is undeniable.</p><div class="tau"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&q=80" class="tav" alt="Tom G."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">Tom Garrett</div><div class="tbz">Garrett General Contracting</div></div></div></div>
+      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">Our phone hasn&apos;t stopped ringing since the new site launched. WebCraft delivered something incredible, and we&apos;re now #1 in Google for our area.</p><div class="tau"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&q=80" class="tav" alt="Mike T."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">Mike Torres</div><div class="tbz">Torres HVAC Services</div></div></div></div>
+      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">I was hesitant to invest in a website but WebCraft made it so easy. The site looks incredible and my bookings doubled in the first 60 days. Worth every penny.</p><div class="tau"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&q=80" class="tav" alt="Sarah K."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">Sarah Kim</div><div class="tbz">Kim&apos;s Beauty Bar</div></div></div></div>
+      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">Professional from first contact to launch. Fast, looks great on phones, and customers always comment on it.</p><div class="tau"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=96&q=80" class="tav" alt="James R."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">James Reeves</div><div class="tbz">Reeves Landscaping</div></div></div></div>
+      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">WebCraft built us a site that brings in roofing leads every week. Professional, fast, and the free preview made the decision easy.</p><div class="tau"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=96&q=80" class="tav" alt="Carlos R."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">Carlos Rivera</div><div class="tbz">Rivera Roofing</div></div></div></div>
+      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">WebCraft built us a site that actually converts. Most of our new leads come through the contact form now. The ROI is undeniable.</p><div class="tau"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&q=80" class="tav" alt="Tom G."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">Tom Garrett</div><div class="tbz">Garrett General Contracting</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="sec light">
+  <div class="wrap">
+    <div class="fwp">
+      <div class="rl">
+        <div class="lbl">FAQ</div>
+        <h2 class="h2">Common <em>Questions</em></h2>
+        <p class="desc">Have a question not answered here? We&apos;d love to talk. Reach out and get a response same day.</p>
+        <a href="#ct" class="bp" style="margin-top:36px;display:inline-flex">Ask Us Anything &rarr;</a>
+      </div>
+      <div class="fls rr">
+        <div class="fi"><button class="fq" onclick="tf(this)">How long does it take to build my website?<span class="fc">+</span></button><div class="fa"><p>We build your free preview within 48 hours of your initial outreach - no payment needed to see it. Once you approve and fill out your intake form, your full custom site is typically completed within a few business days.</p></div></div>
+        <div class="fi"><button class="fq" onclick="tf(this)">Do I need to provide my own content and photos?<span class="fc">+</span></button><div class="fa"><p>You can, but you don&apos;t have to. We can write copy for your business and source professional stock photography. If you have your own photos, we&apos;ll use those to make the site feel authentic.</p></div></div>
+        <div class="fi"><button class="fq" onclick="tf(this)">Will my website show up in Google?<span class="fc">+</span></button><div class="fa"><p>Every site we build follows best practices for on-page SEO - proper titles, meta descriptions, and structure to help Google index your site. We also submit your site to Google Search Console at launch.</p></div></div>
+        <div class="fi"><button class="fq" onclick="tf(this)">What does the $25/month maintenance cover?<span class="fc">+</span></button><div class="fa"><p>Our $25/month maintenance covers site updates, security patches, performance checks, and content changes. Just send us what you need updated and we handle it - no technical knowledge required.</p></div></div>
+        <div class="fi"><button class="fq" onclick="tf(this)">What businesses do you typically work with?<span class="fc">+</span></button><div class="fa"><p>We specialize in local service businesses including landscapers, roofers, plumbers, HVAC companies, salons, barbers, and general contractors. If you serve customers in a local area, we&apos;re built for you.</p></div></div>
+        <div class="fi"><button class="fq" onclick="tf(this)">What if I&apos;m not happy with the design?<span class="fc">+</span></button><div class="fa"><p>With our free preview model, you see your full website before paying anything. If you don&apos;t love it, you don&apos;t pay. Simple as that. We&apos;ve never had a client walk away unhappy.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="ct" class="sec">
+  <div class="wrap">
+    <div class="cwp">
+      <div class="rl">
+        <div class="lbl">Contact Us</div>
+        <h2 class="h2">Let&apos;s Build<br><em>Something Great</em></h2>
+        <p class="desc" style="margin-top:16px;margin-bottom:48px">Ready to see your free preview? Fill out the form and we&apos;ll have your preview website ready within 48 hours - no payment required.</p>
+        <div class="ci"><div class="cicn">&#128231;</div><div class="cit"><div class="lb">Email</div><div class="vl">contactwebcraftdigital@gmail.com</div></div></div>
+        <div class="ci"><div class="cicn">&#128222;</div><div class="cit"><div class="lb">Phone</div><div class="vl">(518) 384-5031</div></div></div>
+        <div class="ci"><div class="cicn">&#128336;</div><div class="cit"><div class="lb">Hours</div><div class="vl">Mon&ndash;Fri, 9am&ndash;6pm EST</div></div></div>
+        <div class="ci"><div class="cicn">&#128205;</div><div class="cit"><div class="lb">Location</div><div class="vl">Albany, NY — Serving clients nationwide</div></div></div>
+      </div>
+      <div class="cfm rr">
+        <h3 style="font-family:var(--fd);font-size:1.5rem;color:var(--wh);margin-bottom:8px">Get Your Free Quote</h3>
+        <p style="font-size:.88rem;color:var(--txd);margin-bottom:36px">No commitment. Just a friendly conversation about your goals.</p>
+        <form id="cfe" onsubmit="hs(event)">
+          <div class="fr">
+            <div class="fg"><label>First Name</label><input type="text" placeholder="John" required></div>
+            <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith" required></div>
+          </div>
+          <div class="fg"><label>Email Address</label><input type="email" placeholder="john@yourbusiness.com" required></div>
+          <div class="fg"><label>Business Type</label><select><option value="" disabled selected>Select your industry...</option><option>Landscaping / Lawn Care</option><option>Roofing</option><option>Plumbing</option><option>HVAC</option><option>Salon / Barber</option><option>General Contractor</option><option>Other Service Business</option></select></div>
+          <div class="fg"><label>Tell Us About Your Project</label><textarea placeholder="Describe your business and what you're looking for..."></textarea></div>
+          <button type="submit" class="bp fsb">Send My Free Quote Request &rarr;</button>
+          <p class="fno">&#128274; Your info is private. No spam, ever. We respond within 24 hours.</p>
+        </form>
+        <div id="fok" style="display:none;text-align:center;padding:40px 0">
+          <div style="font-size:3rem;margin-bottom:16px">&#9989;</div>
+          <h3 style="font-family:var(--fd);font-size:1.6rem;color:var(--cy);margin-bottom:12px">Message Received!</h3>
+          <p style="color:var(--txd)">We&apos;ll be in touch within 24 hours. Check your email for a confirmation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCROLL CTA BAR -->
+<div id="scbar">
+  <span class="scb-txt">Need a <em>Website?</em></span>
+  <div class="scb-mid">
+    <span class="scb-ph">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+      <a href="tel:5183845031">(518) 384-5031</a>
+    </span>
+    <a href="#ct" class="scb-btn">Free Quote &rarr;</a>
+  </div>
+</div>
+<!-- PHONE FLOAT -->
+<a href="tel:5183845031" id="phbtn" aria-label="Call us">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+</a>
+<!-- BACK TO TOP -->
+<button id="bttop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="ftp">
+      <div class="fbr">
+        <a href="#hero" class="nlo" style="margin-bottom:20px;display:inline-flex">
+          <div class="nic"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="2" y="3" width="18" height="14" rx="1.5" stroke="#00d4ff" stroke-width="1.5"/><line x1="11" y1="17" x2="11" y2="21" stroke="#00d4ff" stroke-width="1.5"/><line x1="8" y1="21" x2="14" y2="21" stroke="#00d4ff" stroke-width="1.5"/><path d="M9 7.5 C9 6.4 10.1 5.5 11.5 5.5 L11.5 11.5 L9 11.5 Z" fill="#00d4ff" opacity=".7"/><path d="M13.5 9.5 L17 6 M17 6 L17 8.2 M17 6 L14.8 6" stroke="#00d4ff" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+          <div class="ntt"><span class="a">WebCraft</span><span class="b">Digital</span></div>
+        </a>
+        <p>We build high-performance websites for local service businesses  - designed to rank in Google, convert visitors, and grow your revenue.</p>
+        <div class="fsc">
+          <a href="#" class="fsl">f</a><a href="#" class="fsl">in</a><a href="#" class="fsl">li</a><a href="#" class="fsl" style="font-size:.75rem">X</a>
+        </div>
+      </div>
+      <div class="fcl"><h4>Services</h4><ul><li><a href="#srv">Custom Web Design</a></li><li><a href="#srv">Free Preview</a></li><li><a href="#srv">Mobile Optimization</a></li><li><a href="#srv">All-Inclusive Pages</a></li><li><a href="#srv">Ongoing Support</a></li></ul></div>
+      <div class="fcl"><h4>Company</h4><ul><li><a href="#abt">About Us</a></li><li><a href="#pf">Our Work</a></li><li><a href="#tst">Reviews</a></li><li><a href="#faq">FAQ</a></li><li><a href="#ct">Contact</a></li></ul></div>
+      <div class="fcl"><h4>Resources</h4><ul><li><a href="#ct">Free SEO Audit</a></li><li><a href="#ct">Website Checklist</a></li><li><a href="#ct">Blog</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li></ul></div>
+    </div>
+    <div class="fbt"><span>&copy; 2026 WebCraft Digital. All rights reserved.</span><span>Built with &hearts; for local businesses</span></div>
+  </div>
+</footer>
+
+<script>
+// PARTICLES CANVAS
+var canvas=document.getElementById('cvs'),ctx=canvas.getContext('2d'),W,H;
+function rc(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight}
+rc();window.addEventListener('resize',rc);
+var pts=[];
+for(var i=0;i<80;i++)pts.push({x:Math.random()*1920,y:Math.random()*1080,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:Math.random()*1.5+.5,a:Math.random()*.6+.1});
+(function dp(){ctx.clearRect(0,0,W,H);
+pts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(0,212,255,'+p.a+')';ctx.fill()});
+for(var i=0;i<pts.length;i++)for(var j=i+1;j<pts.length;j++){var d=Math.hypot(pts[i].x-pts[j].x,pts[i].y-pts[j].y);if(d<120){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle='rgba(0,212,255,'+(.08*(1-d/120))+')';ctx.lineWidth=.5;ctx.stroke()}}
+requestAnimationFrame(dp)})();
+
+// NAVBAR SCROLL
+var nb=document.getElementById('nb');
+window.addEventListener('scroll',function(){nb.classList.toggle('sc',scrollY>20)});
+
+// COUNTER ANIMATION
+function ac(el,target,dur){var s=0,step=target/(dur/16),t=setInterval(function(){s+=step;if(s>=target){el.textContent=target;clearInterval(t)}else el.textContent=Math.floor(s)},16)}
+
+// SCROLL REVEAL
+var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('on')})},{threshold:.1,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.rv,.rl,.rr').forEach(function(el){obs.observe(el)});
+
+// STAT COUNTERS
+var cobs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){ac(en.target,+en.target.dataset.target,1500);cobs.unobserve(en.target)}})},{threshold:.5});
+document.querySelectorAll('.counter').forEach(function(el){cobs.observe(el)});
+
+// HERO TITLE ENTRANCE
+window.addEventListener('load',function(){
+  document.querySelectorAll('.htl .wd').forEach(function(w,i){
+    w.style.opacity='0';w.style.transform='translateY(60px)';w.style.display='inline-block';
+    setTimeout(function(){w.style.transition='opacity .7s ease,transform .7s ease';w.style.opacity='1';w.style.transform='translateY(0)'},200+i*160)
+  });
+  ['.hey','.hsb','.hac','.hbs'].forEach(function(sel,i){
+    var el=document.querySelector(sel);if(!el)return;
+    el.style.opacity='0';el.style.transform='translateY(30px)';
+    setTimeout(function(){el.style.transition='opacity .7s ease,transform .7s ease';el.style.opacity='1';el.style.transform='translateY(0)'},700+i*150)
+  });
+});
+
+// PORTFOLIO FILTER
+document.querySelectorAll('.fb').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.fb').forEach(function(x){x.classList.remove('on')});this.classList.add('on')})});
+
+// FAQ TOGGLE
+function tf(btn){var item=btn.parentElement,isOpen=item.classList.contains('op');document.querySelectorAll('.fi').forEach(function(i){i.classList.remove('op')});if(!isOpen)item.classList.add('op')}
+
+// FORM SUBMIT
+function hs(e){e.preventDefault();var f=document.getElementById('cfe'),ok=document.getElementById('fok');f.style.cssText='opacity:0;transform:scale(.96);transition:all .4s';setTimeout(function(){f.style.display='none';ok.style.cssText='display:block;opacity:0;transform:scale(.9);transition:all .5s';setTimeout(function(){ok.style.opacity='1';ok.style.transform='scale(1)'},50)},400)}
+
+// IFRAME SCALING
+
+// SCROLL CTA BAR + FLOATING BUTTONS
+var scbar=document.getElementById('scbar'),phbtn=document.getElementById('phbtn'),bttop=document.getElementById('bttop');
+window.addEventListener('scroll',function(){var show=scrollY>300;scbar.classList.toggle('vis',show);phbtn.classList.toggle('vis',show);bttop.classList.toggle('vis',show)});
+
+// MOBILE MENU
+function tmenu(){var nl=document.querySelector('.nul');if(nl.dataset.open){delete nl.dataset.open;nl.style.cssText=''}else{nl.dataset.open=1;nl.style.cssText='display:flex;flex-direction:column;position:fixed;top:80px;left:0;right:0;background:rgba(0,0,0,.97);padding:32px 40px;gap:24px;border-bottom:1px solid rgba(0,212,255,.15);backdrop-filter:blur(20px);z-index:999'}}
+document.querySelectorAll('.nul a').forEach(function(a){a.addEventListener('click',function(){var nl=document.querySelector('.nul');delete nl.dataset.open;nl.style.cssText=''})});
+</script>
+<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a10b3a2294a01e42fe0c5d2" data-source="WEB_USER"></script>
+</body>
+</html>
