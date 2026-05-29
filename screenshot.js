@@ -6,6 +6,7 @@ const pages = [
   { file: 'preview-roofing.html',     out: 'screenshot-roofing.jpg' },
   { file: 'preview-contractor.html',  out: 'screenshot-contractor.jpg' },
   { file: 'preview-hvac.html',        out: 'screenshot-hvac.jpg' },
+  { file: 'preview-electrician.html', out: 'screenshot-electrician.jpg' },
 ];
 
 (async () => {
@@ -15,8 +16,8 @@ const pages = [
     await page.setViewport({ width: 1440, height: 900 });
     const url = 'file:///' + path.join('C:/Users/jesse/webcraft-digital', p.file).replace(/\\/g, '/');
     console.log('Screenshotting', url);
-    await page.goto(url, { waitUntil: 'networkidle2', timeout: 15000 });
-    await new Promise(r => setTimeout(r, 1500));
+    await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+    await new Promise(r => setTimeout(r, 3000));
     await page.screenshot({
       path: path.join('C:/Users/jesse/webcraft-digital', p.out),
       type: 'jpeg',

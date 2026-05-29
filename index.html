@@ -33,14 +33,11 @@ body{background:var(--bg);color:var(--tx);font-family:var(--fb);overflow-x:hidde
 .rr{opacity:0;transform:translateX(50px)}.rr.on{opacity:1;transform:translateX(0);transition:opacity .8s ease,transform .8s ease}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nh);display:flex;align-items:center;padding:0 40px;transition:background .4s,box-shadow .4s}
-nav.sc{background:rgba(0,0,0,.92);backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--bd)}
-.nlo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
-.nic{width:44px;height:44px;background:#000;border:1.5px solid var(--cy);border-radius:6px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 14px var(--cg)}
-.ntt{display:flex;flex-direction:column;line-height:1}
-.ntt .a{font-family:var(--fd);font-weight:700;font-size:.98rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cy)}
-.ntt .b{font-family:var(--fd);font-weight:600;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cy);opacity:.8}
-.nul{display:flex;align-items:center;gap:36px;list-style:none;margin:0 auto}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nh);display:flex;align-items:center;padding:0 40px;background:rgba(0,0,0,.97);backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--bd);transition:box-shadow .4s;overflow:visible}
+nav.sc{box-shadow:0 1px 0 var(--bdb)}
+.nlo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+.nlogo{height:200px;width:auto;display:block}
+.nul{display:flex;align-items:center;gap:36px;list-style:none;position:absolute;left:50%;transform:translateX(-50%);margin:0}
 .nul a{font-size:.84rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--wh);text-decoration:none;position:relative;transition:color .3s}
 .nul a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--cy);transition:width .3s}
 .nul a:hover{color:var(--cy)}.nul a:hover::after{width:100%}
@@ -84,7 +81,7 @@ nav.sc{background:rgba(0,0,0,.92);backdrop-filter:blur(20px);box-shadow:0 1px 0 
 .ti{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:#000;flex-shrink:0}
 
 /* SERVICES */
-#srv{background:var(--bg2)}
+#srv{background:#fff}
 .shdg{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:70px}
 .sgd{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
 .sc{background:var(--bcard);border:1px solid var(--bd);padding:40px 36px;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
@@ -232,8 +229,8 @@ nav.sc{background:rgba(0,0,0,.92);backdrop-filter:blur(20px);box-shadow:0 1px 0 
 #ct .fg input::placeholder,#ct .fg textarea::placeholder{color:var(--ltxd);opacity:.6}
 #ct .fno{color:var(--ltxd)}
 /* FOOTER */
-footer{background:#000;border-top:1px solid var(--bd);padding-top:80px}
-.ftp{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;padding-bottom:60px;border-bottom:1px solid var(--bd)}
+footer{background:#000;border-top:1px solid var(--bd);padding-top:16px}
+.ftp{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;padding-bottom:16px;border-bottom:1px solid var(--bd);align-items:center}
 .fbr p{font-size:.88rem;color:var(--txd);line-height:1.75;max-width:280px;margin-bottom:28px}
 .fsc{display:flex;gap:12px}
 .fsl{width:38px;height:38px;border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;color:var(--txd);font-size:.9rem;text-decoration:none;transition:all .3s;border-radius:2px}
@@ -242,7 +239,7 @@ footer{background:#000;border-top:1px solid var(--bd);padding-top:80px}
 .fcl ul{list-style:none;display:flex;flex-direction:column;gap:12px}
 .fcl ul li a{font-size:.88rem;color:var(--txd);text-decoration:none;transition:color .3s}
 .fcl ul li a:hover{color:var(--cy)}
-.fbt{padding:24px 0;display:flex;align-items:center;justify-content:space-between;font-size:.8rem;color:var(--txd)}
+.fbt{padding:12px 0;display:flex;align-items:center;justify-content:space-between;font-size:.8rem;color:var(--txd)}
 
 /* ABOUT — light bg */
 #abt .h2{color:var(--ltx)}
@@ -288,8 +285,14 @@ footer{background:#000;border-top:1px solid var(--bd);padding-top:80px}
 .light .fwp .bp{background:var(--cy2)}
 .light .fwp .bp:hover{box-shadow:0 0 30px rgba(0,150,200,.4)}
 /* services section heading + desc override */
-#srv .h2{color:var(--cy2)}
-#srv .shdg .desc{color:var(--wh)}
+#srv .h2{color:var(--ltx)}
+#srv .shdg .desc{color:var(--ltxd);font-size:1.2rem}
+#srv .sc{background:#f8faff;border-color:var(--lbd)}
+#srv .sc:hover{border-color:var(--lbdb)}
+#srv .sc h3{color:var(--ltx)}
+#srv .sc p{color:var(--ltxd)}
+#srv .sc .sno{color:#111;opacity:1;font-size:1.4rem}
+#srv .sc::before{background:linear-gradient(135deg,rgba(0,150,200,.08) 0%,transparent 60%)}
 /* process section overrides */
 #prc .prhd .h2{color:var(--cy2)}
 #prc .prhd .desc{color:var(--wh)}
@@ -316,12 +319,12 @@ footer{background:#000;border-top:1px solid var(--bd);padding-top:80px}
 .scb-btn{display:inline-flex;align-items:center;gap:8px;background:var(--cy);color:#000;font-family:var(--fb);font-weight:700;font-size:.78rem;padding:8px 18px;border:none;cursor:pointer;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));transition:all .3s;text-decoration:none;white-space:nowrap;flex-shrink:0}
 .scb-btn:hover{box-shadow:0 0 20px var(--cgs)}
 /* floating buttons — right side */
-#phbtn{position:fixed;right:22px;bottom:110px;z-index:991;width:42px;height:42px;background:var(--cy);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;cursor:pointer;text-decoration:none;opacity:0;transform:translateY(16px);transition:opacity .35s,transform .35s,box-shadow .3s;box-shadow:0 4px 16px rgba(0,212,255,.3)}
+#phbtn{position:fixed;right:22px;bottom:70px;z-index:991;display:flex;align-items:center;gap:8px;background:var(--cy);border-radius:50px;padding:11px 20px 11px 16px;color:#000;font-family:var(--fb);font-weight:700;font-size:.82rem;text-decoration:none;cursor:pointer;opacity:0;transform:translateY(16px);transition:opacity .35s,transform .35s,box-shadow .3s;box-shadow:0 4px 20px rgba(0,212,255,.35);letter-spacing:.03em}
 #phbtn.vis{opacity:1;transform:translateY(0)}
-#phbtn:hover{box-shadow:0 4px 28px var(--cgs)}
-#bttop{position:fixed;right:22px;bottom:58px;z-index:991;width:42px;height:42px;background:rgba(6,8,16,.9);border:1px solid var(--bdb);border-radius:2px;display:flex;align-items:center;justify-content:center;color:var(--cy);cursor:pointer;opacity:0;transform:translateY(16px);transition:opacity .35s,transform .35s,background .3s}
-#bttop.vis{opacity:1;transform:translateY(0)}
-#bttop:hover{background:rgba(0,212,255,.1)}
+#phbtn:hover{box-shadow:0 6px 32px rgba(0,212,255,.55);transform:translateY(-2px)}
+.phbtn-lbl{line-height:1}
+/* Move chat widget to left side */
+chat-widget{position:fixed;left:20px;bottom:20px;right:auto}
 @media(max-width:768px){#scbar{padding:10px 16px;gap:10px}.scb-txt{display:none}.scb-mid{gap:10px}}
 @media(max-width:480px){.scb-ph .scb-label{display:none}}
 
@@ -335,19 +338,7 @@ footer{background:#000;border-top:1px solid var(--bd);padding-top:80px}
 <!-- NAV -->
 <nav id="nb">
   <a href="#hero" class="nlo">
-    <div class="nic">
-      <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-        <rect x="2" y="3" width="18" height="14" rx="1.5" stroke="#00d4ff" stroke-width="1.5"/>
-        <line x1="11" y1="17" x2="11" y2="21" stroke="#00d4ff" stroke-width="1.5"/>
-        <line x1="8" y1="21" x2="14" y2="21" stroke="#00d4ff" stroke-width="1.5"/>
-        <path d="M9 7.5 C9 6.4 10.1 5.5 11.5 5.5 L11.5 11.5 L9 11.5 Z" fill="#00d4ff" opacity=".7"/>
-        <path d="M13.5 9.5 L17 6 M17 6 L17 8.2 M17 6 L14.8 6" stroke="#00d4ff" stroke-width="1.3" stroke-linecap="round"/>
-        <circle cx="21.5" cy="5" r="3.2" stroke="#00d4ff" stroke-width="1.2" fill="rgba(0,212,255,0.1)"/>
-        <line x1="21.5" y1="3.2" x2="21.5" y2="6.8" stroke="#00d4ff" stroke-width="1" stroke-linecap="round"/>
-        <line x1="19.8" y1="5" x2="23.2" y2="5" stroke="#00d4ff" stroke-width="1" stroke-linecap="round"/>
-      </svg>
-    </div>
-    <div class="ntt"><span class="a">WebCraft</span><span class="b">Digital</span></div>
+    <img src="logo.png" alt="WebCraft Digital" class="nlogo">
   </a>
   <ul class="nul">
     <li><a href="#srv">Services</a></li>
@@ -356,7 +347,7 @@ footer{background:#000;border-top:1px solid var(--bd);padding-top:80px}
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#ct">Contact</a></li>
   </ul>
-  <a href="#ct" class="bp ncta" style="flex-shrink:0">Get Free Quote</a>
+  <a href="#ct" class="bp ncta" style="flex-shrink:0;margin-left:auto">Get Free Quote</a>
   <button class="nbg" onclick="tmenu()"><span></span><span></span><span></span></button>
 </nav>
 
@@ -419,12 +410,12 @@ footer{background:#000;border-top:1px solid var(--bd);padding-top:80px}
       <p class="desc">We handle everything from custom design to launch and beyond  - so you can focus on running your business.</p>
     </div>
     <div class="sgd">
-      <div class="sc"><span class="sno">01</span><div class="si">&#127912;</div><h3>Custom Web Design</h3><p>Every site we build is 100% custom - no templates, no page builders. Hand-crafted to represent your business and convert visitors into calls.</p></div>
-      <div class="sc"><span class="sno">02</span><div class="si">&#128205;</div><h3>Free Preview First</h3><p>We build your full preview website before you pay a single dollar. You see exactly what you&apos;re getting, walk through it with us live, then decide.</p></div>
-      <div class="sc"><span class="sno">03</span><div class="si">&#128241;</div><h3>Mobile-First Build</h3><p>Every site we build looks flawless on phones, tablets, and desktops. Over 70% of your customers will find you on mobile - we make sure you impress them.</p></div>
-      <div class="sc"><span class="sno">04</span><div class="si">&#9889;</div><h3>Performance Optimized</h3><p>Lightning-fast load times mean more leads, better rankings, and customers who don&apos;t bounce before the page loads.</p></div>
-      <div class="sc"><span class="sno">05</span><div class="si">&#128172;</div><h3>All the Right Pages</h3><p>Every site includes a contact form, services section, testimonials, FAQ, and service areas page - everything a local business needs to convert visitors.</p></div>
-      <div class="sc"><span class="sno">06</span><div class="si">&#128295;</div><h3>Ongoing Support</h3><p>We stay with you after launch. Monthly maintenance keeps your site fast, updated, and secure for just $25/month.</p></div>
+      <div class="sc"><span class="sno">1</span><div class="si">&#127912;</div><h3>Custom Web Design</h3><p>Every site we build is 100% custom - no templates, no page builders. Hand-crafted to represent your business and convert visitors into calls.</p></div>
+      <div class="sc"><span class="sno">2</span><div class="si">&#128205;</div><h3>Free Preview First</h3><p>We build your full preview website before you pay a single dollar. You see exactly what you&apos;re getting, walk through it with us live, then decide.</p></div>
+      <div class="sc"><span class="sno">3</span><div class="si">&#128241;</div><h3>Mobile-First Build</h3><p>Every site we build looks flawless on phones, tablets, and desktops. Over 70% of your customers will find you on mobile - we make sure you impress them.</p></div>
+      <div class="sc"><span class="sno">4</span><div class="si">&#9889;</div><h3>Performance Optimized</h3><p>Lightning-fast load times mean more leads, better rankings, and customers who don&apos;t bounce before the page loads.</p></div>
+      <div class="sc"><span class="sno">5</span><div class="si">&#128172;</div><h3>All the Right Pages</h3><p>Every site includes a contact form, services section, testimonials, FAQ, and service areas page - everything a local business needs to convert visitors.</p></div>
+      <div class="sc"><span class="sno">6</span><div class="si">&#128295;</div><h3>Ongoing Support</h3><p>We stay with you after launch. Monthly maintenance keeps your site fast, updated, and secure for just $25/month.</p></div>
     </div>
   </div>
 </section>
@@ -544,7 +535,7 @@ footer{background:#000;border-top:1px solid var(--bd);padding-top:80px}
         <h2 class="h2">Let&apos;s Build<br><em>Something Great</em></h2>
         <p class="desc" style="margin-top:16px;margin-bottom:48px">Ready to see your free preview? Fill out the form and we&apos;ll have your preview website ready within 48 hours - no payment required.</p>
         <div class="ci"><div class="cicn">&#128231;</div><div class="cit"><div class="lb">Email</div><div class="vl">contactwebcraftdigital@gmail.com</div></div></div>
-        <div class="ci"><div class="cicn">&#128222;</div><div class="cit"><div class="lb">Phone</div><div class="vl">(518) 384-5031</div></div></div>
+        <div class="ci"><div class="cicn">&#128222;</div><div class="cit"><div class="lb">Phone</div><div class="vl">(518) 832-5937</div></div></div>
         <div class="ci"><div class="cicn">&#128336;</div><div class="cit"><div class="lb">Hours</div><div class="vl">Mon&ndash;Fri, 9am&ndash;6pm EST</div></div></div>
         <div class="ci"><div class="cicn">&#128205;</div><div class="cit"><div class="lb">Location</div><div class="vl">Albany, NY — Serving clients nationwide</div></div></div>
       </div>
@@ -578,19 +569,16 @@ footer{background:#000;border-top:1px solid var(--bd);padding-top:80px}
   <div class="scb-mid">
     <span class="scb-ph">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
-      <a href="tel:5183845031">(518) 384-5031</a>
+      <a href="tel:5188325937">(518) 832-5937</a>
     </span>
     <a href="#ct" class="scb-btn">Free Quote &rarr;</a>
   </div>
 </div>
 <!-- PHONE FLOAT -->
-<a href="tel:5183845031" id="phbtn" aria-label="Call us">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+<a href="tel:5188325937" id="phbtn" aria-label="Call us">
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+  <span class="phbtn-lbl">Call Us</span>
 </a>
-<!-- BACK TO TOP -->
-<button id="bttop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
 
 <!-- FOOTER -->
 <footer>
@@ -598,13 +586,9 @@ footer{background:#000;border-top:1px solid var(--bd);padding-top:80px}
     <div class="ftp">
       <div class="fbr">
         <a href="#hero" class="nlo" style="margin-bottom:20px;display:inline-flex">
-          <div class="nic"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="2" y="3" width="18" height="14" rx="1.5" stroke="#00d4ff" stroke-width="1.5"/><line x1="11" y1="17" x2="11" y2="21" stroke="#00d4ff" stroke-width="1.5"/><line x1="8" y1="21" x2="14" y2="21" stroke="#00d4ff" stroke-width="1.5"/><path d="M9 7.5 C9 6.4 10.1 5.5 11.5 5.5 L11.5 11.5 L9 11.5 Z" fill="#00d4ff" opacity=".7"/><path d="M13.5 9.5 L17 6 M17 6 L17 8.2 M17 6 L14.8 6" stroke="#00d4ff" stroke-width="1.3" stroke-linecap="round"/></svg></div>
-          <div class="ntt"><span class="a">WebCraft</span><span class="b">Digital</span></div>
+          <img src="logo.png" alt="WebCraft Digital" style="height:180px;width:auto;display:block">
         </a>
         <p>We build high-performance websites for local service businesses  - designed to rank in Google, convert visitors, and grow your revenue.</p>
-        <div class="fsc">
-          <a href="#" class="fsl">f</a><a href="#" class="fsl">in</a><a href="#" class="fsl">li</a><a href="#" class="fsl" style="font-size:.75rem">X</a>
-        </div>
       </div>
       <div class="fcl"><h4>Services</h4><ul><li><a href="#srv">Custom Web Design</a></li><li><a href="#srv">Free Preview</a></li><li><a href="#srv">Mobile Optimization</a></li><li><a href="#srv">All-Inclusive Pages</a></li><li><a href="#srv">Ongoing Support</a></li></ul></div>
       <div class="fcl"><h4>Company</h4><ul><li><a href="#abt">About Us</a></li><li><a href="#pf">Our Work</a></li><li><a href="#tst">Reviews</a></li><li><a href="#faq">FAQ</a></li><li><a href="#ct">Contact</a></li></ul></div>
@@ -666,8 +650,25 @@ function hs(e){e.preventDefault();var f=document.getElementById('cfe'),ok=docume
 // IFRAME SCALING
 
 // SCROLL CTA BAR + FLOATING BUTTONS
-var scbar=document.getElementById('scbar'),phbtn=document.getElementById('phbtn'),bttop=document.getElementById('bttop');
-window.addEventListener('scroll',function(){var show=scrollY>300;scbar.classList.toggle('vis',show);phbtn.classList.toggle('vis',show);bttop.classList.toggle('vis',show)});
+var scbar=document.getElementById('scbar'),phbtn=document.getElementById('phbtn');
+window.addEventListener('scroll',function(){var show=scrollY>300;scbar.classList.toggle('vis',show);phbtn.classList.toggle('vis',show)});
+// Move chat widget to left side (targets shadow DOM elements)
+(function(){
+  function moveChatLeft(){
+    var cw=document.querySelector('chat-widget');
+    if(!cw||!cw.shadowRoot)return;
+    var targets=cw.shadowRoot.querySelectorAll('#lc_text-widget,#lc_text-widget--btn');
+    targets.forEach(function(el){
+      el.style.right='auto';
+      el.style.left='20px';
+      el.style.bottom='70px';
+    });
+  }
+  // Try immediately, on mutations, and after delays
+  var obs=new MutationObserver(moveChatLeft);
+  obs.observe(document.body,{childList:true,subtree:true});
+  [500,1000,2000,4000].forEach(function(t){setTimeout(moveChatLeft,t);});
+})();
 
 // MOBILE MENU
 function tmenu(){var nl=document.querySelector('.nul');if(nl.dataset.open){delete nl.dataset.open;nl.style.cssText=''}else{nl.dataset.open=1;nl.style.cssText='display:flex;flex-direction:column;position:fixed;top:80px;left:0;right:0;background:rgba(0,0,0,.97);padding:32px 40px;gap:24px;border-bottom:1px solid rgba(0,212,255,.15);backdrop-filter:blur(20px);z-index:999'}}

@@ -9,104 +9,87 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{width:100%;min-height:100%;font-family:'DM Sans',sans-serif;background:#030d1a;color:#fff;overflow-x:hidden}
-#hero{min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&q=80');background-size:cover;background-position:center}
-.bg-glow{position:absolute;inset:0;background:linear-gradient(to right,rgba(3,13,26,0.92) 0%,rgba(3,13,26,0.80) 55%,rgba(3,13,26,0.55) 100%);z-index:0}
-.grid-mesh{position:absolute;inset:0;background-image:linear-gradient(rgba(2,132,199,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(2,132,199,0.05) 1px,transparent 1px);background-size:55px 55px;mask-image:radial-gradient(ellipse 85% 85% at 50% 50%,black 30%,transparent 100%);pointer-events:none;z-index:0}
-nav{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:22px 56px;border-bottom:1px solid rgba(2,132,199,0.15)}
-.nav-logo{font-family:'DM Sans',sans-serif;font-size:1.15rem;font-weight:700;color:#0284c7;letter-spacing:0.02em;text-decoration:none}
+#hero{min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;background-image:url('https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?w=1400&q=80');background-size:cover;background-position:center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(3,13,26,0.95) 0%,rgba(3,13,26,0.82) 55%,rgba(3,13,26,0.45) 100%);z-index:1}
+nav{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:24px 60px;border-bottom:1px solid rgba(2,132,199,0.25);background:#020912}
+.nav-logo{font-family:'DM Sans',sans-serif;font-size:1.15rem;font-weight:700;color:#0284c7;letter-spacing:.02em;text-decoration:none}
 .nav-logo span{color:rgba(255,255,255,0.9);font-weight:400}
 .nav-links{display:flex;align-items:center;gap:36px;list-style:none}
 .nav-links a{font-size:.875rem;font-weight:500;color:rgba(255,255,255,0.65);text-decoration:none;transition:color .25s}
 .nav-links a:hover{color:#fff}
 .nav-cta{background:#0284c7;color:#fff;font-family:'DM Sans',sans-serif;font-size:.875rem;font-weight:600;padding:10px 22px;border:none;border-radius:6px;cursor:pointer;text-decoration:none;transition:background .25s,box-shadow .25s}
 .nav-cta:hover{background:#0369a1;box-shadow:0 0 20px rgba(2,132,199,0.4)}
-.hero-body{position:relative;z-index:2;flex:1;display:grid;grid-template-columns:1fr 460px;gap:60px;align-items:center;padding:72px 56px 80px}
+.hero-body{position:relative;z-index:2;flex:1;display:grid;grid-template-columns:1fr 460px;gap:60px;align-items:center;padding:72px 60px 90px}
+.hero-content{display:flex;flex-direction:column}
 .badge-pill{display:inline-flex;align-items:center;gap:9px;background:rgba(2,132,199,0.1);border:1px solid rgba(2,132,199,0.35);border-radius:100px;padding:7px 18px;font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#38bdf8;width:fit-content;margin-bottom:32px}
 .badge-dot{width:7px;height:7px;background:#38bdf8;border-radius:50%;animation:pulse 2s infinite;flex-shrink:0}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(56,189,248,.5)}50%{box-shadow:0 0 0 5px rgba(56,189,248,0)}}
 .hero-headline{font-family:'DM Serif Display',serif;font-size:clamp(2.8rem,4.2vw,4.2rem);font-weight:400;line-height:1.1;color:#fff;margin-bottom:26px}
 .hero-headline em{font-style:italic;color:#38bdf8}
-.hero-subtext{font-size:1.05rem;color:rgba(255,255,255,0.6);line-height:1.78;max-width:500px;margin-bottom:40px}
+.hero-desc{font-size:1.05rem;color:rgba(255,255,255,0.6);line-height:1.78;max-width:500px;margin-bottom:40px}
 .hero-checks{display:flex;flex-direction:column;gap:14px}
 .check-item{display:flex;align-items:center;gap:12px;font-size:.925rem;color:rgba(255,255,255,0.75)}
 .check-icon{width:22px;height:22px;flex-shrink:0;background:rgba(2,132,199,0.15);border:1px solid rgba(2,132,199,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#38bdf8;font-size:.65rem;font-weight:700}
-.hero-right{position:relative}
-.float-badge{position:absolute;top:-22px;right:-22px;background:rgba(3,13,26,0.95);border:1px solid rgba(2,132,199,0.4);border-radius:10px;padding:14px 18px;backdrop-filter:blur(10px);animation:float 4s ease-in-out infinite;z-index:2}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.float-badge .fb-label{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#64748b;margin-bottom:4px}
-.float-badge .fb-value{font-family:'DM Serif Display',serif;font-size:1.5rem;color:#38bdf8;line-height:1}
-.float-badge .fb-sub{font-size:.72rem;color:#94a3b8;margin-top:2px}
-.form-card{background:#fff;border-radius:14px;padding:40px 36px;box-shadow:0 30px 80px rgba(0,0,0,0.55),0 0 0 1px rgba(255,255,255,0.08);position:relative}
-.form-card-title{font-family:'DM Serif Display',serif;font-size:1.65rem;font-weight:400;color:#0c1a2e;margin-bottom:6px}
-.form-card-subtitle{font-size:.875rem;color:#64748b;margin-bottom:28px;line-height:1.55}
+.form-card{background:rgba(3,13,26,0.88);border:1px solid rgba(2,132,199,0.25);border-radius:14px;padding:40px 36px;backdrop-filter:blur(20px);box-shadow:0 30px 80px rgba(0,0,0,0.55),0 0 0 1px rgba(255,255,255,0.04)}
+.form-card-title{font-family:'DM Serif Display',serif;font-size:1.65rem;font-weight:400;color:#fff;margin-bottom:6px}
+.form-card-subtitle{font-size:.875rem;color:rgba(255,255,255,0.45);margin-bottom:28px;line-height:1.55}
 .form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
-.form-group label{font-size:.76rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#374151}
-.form-group input,.form-group select{font-family:'DM Sans',sans-serif;font-size:.9rem;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:8px;background:#f8fafc;color:#1e293b;outline:none;transition:border-color .2s,box-shadow .2s;width:100%}
-.form-group input::placeholder{color:#b0bec5}
-.form-group input:focus,.form-group select:focus{border-color:#0284c7;box-shadow:0 0 0 3px rgba(2,132,199,0.12);background:#fff}
-.form-group select{cursor:pointer;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;color:#1e293b}
-.form-group select option{color:#1e293b}
+.form-group label{font-size:.76rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,0.5)}
+.form-group input,.form-group select{font-family:'DM Sans',sans-serif;font-size:.9rem;padding:12px 14px;border:1.5px solid rgba(2,132,199,0.2);border-radius:8px;background:rgba(255,255,255,0.05);color:#fff;outline:none;transition:border-color .2s,box-shadow .2s;width:100%}
+.form-group input::placeholder{color:rgba(255,255,255,0.28)}
+.form-group input:focus,.form-group select:focus{border-color:#0284c7;box-shadow:0 0 0 3px rgba(2,132,199,0.12)}
+.form-group select{cursor:pointer;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;color:rgba(255,255,255,0.7)}
+.form-group select option{background:#030d1a;color:#fff}
 .form-submit{width:100%;background:#0284c7;color:#fff;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:600;padding:14px;border:none;border-radius:8px;cursor:pointer;transition:background .25s,box-shadow .25s;margin-top:4px;letter-spacing:.01em}
 .form-submit:hover{background:#0369a1;box-shadow:0 4px 20px rgba(2,132,199,0.4)}
-.form-note{font-size:.78rem;color:#94a3b8;text-align:center;margin-top:12px}
-@media(max-width:900px){nav{padding:18px 24px}.nav-links,.nav-cta{display:none}.hero-body{grid-template-columns:1fr;padding:48px 24px 60px;gap:48px}.float-badge{display:none}}
+.form-note{font-size:.78rem;color:rgba(255,255,255,0.32);text-align:center;margin-top:12px}
+@media(max-width:1024px){.hero-body{grid-template-columns:1fr;max-width:600px}}
+@media(max-width:900px){nav{padding:18px 24px}.nav-links,.nav-cta{display:none}.hero-body{padding:48px 24px 60px}#hero{background-position:70% center}}
 </style>
 </head>
 <body>
 <section id="hero">
-  <div class="bg-glow"></div>
-  <div class="grid-mesh"></div>
+  <div class="hero-overlay"></div>
   <nav>
     <a href="#" class="nav-logo">Russo <span>Plumbing</span></a>
     <ul class="nav-links">
       <li><a href="#">Services</a></li>
       <li><a href="#">About</a></li>
+      <li><a href="#">Our Work</a></li>
+      <li><a href="#">Reviews</a></li>
+      <li><a href="#">Service Areas</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
     <a href="tel:5183845031" class="nav-cta">Call Now</a>
   </nav>
   <div class="hero-body">
-    <div>
+    <div class="hero-content">
       <div class="badge-pill"><span class="badge-dot"></span>Available 24/7 &mdash; Albany, NY</div>
       <h1 class="hero-headline">Fast Fixes.<br><em>Done Right.</em><br>Guaranteed.</h1>
-      <p class="hero-subtext">Licensed plumbers serving Albany and the Capital Region. Drain cleaning, emergency repairs, and full installations &mdash; on time, every time.</p>
+      <p class="hero-desc">Licensed plumbers serving Albany and the Capital Region. Drain cleaning, emergency repairs, and full installations &mdash; on time, every time.</p>
       <div class="hero-checks">
         <div class="check-item"><span class="check-icon">&#10003;</span>Same-day service available</div>
         <div class="check-item"><span class="check-icon">&#10003;</span>Licensed &amp; fully insured</div>
         <div class="check-item"><span class="check-icon">&#10003;</span>Upfront pricing, no surprises</div>
       </div>
     </div>
-    <div class="hero-right">
-      <div class="float-badge">
-        <div class="fb-label">Avg. Callback</div>
-        <div class="fb-value">&lt;1 hr</div>
-        <div class="fb-sub">guaranteed response</div>
+    <div class="form-card">
+      <div class="form-card-title">Request a Free Quote</div>
+      <div class="form-card-subtitle">We'll call you back within the hour.</div>
+      <div class="form-group"><label>Your Name</label><input type="text" placeholder="John Smith"></div>
+      <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="(518) 000-0000"></div>
+      <div class="form-group"><label>What do you need?</label>
+        <select>
+          <option value="" disabled selected>Select a service...</option>
+          <option>Drain Cleaning</option>
+          <option>Emergency Repair</option>
+          <option>Water Heater</option>
+          <option>New Installation</option>
+          <option>Other</option>
+        </select>
       </div>
-      <div class="form-card">
-        <div class="form-card-title">Request a Free Quote</div>
-        <div class="form-card-subtitle">We'll call you back within the hour.</div>
-        <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" placeholder="John Smith">
-        </div>
-        <div class="form-group">
-          <label>Phone Number</label>
-          <input type="tel" placeholder="(518) 000-0000">
-        </div>
-        <div class="form-group">
-          <label>What do you need?</label>
-          <select>
-            <option value="" disabled selected>Select a service...</option>
-            <option>Drain Cleaning</option>
-            <option>Emergency Repair</option>
-            <option>Water Heater</option>
-            <option>New Installation</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <button class="form-submit">Get My Free Quote</button>
-        <div class="form-note">No commitment. We respond fast.</div>
-      </div>
+      <button class="form-submit">Get My Free Quote</button>
+      <div class="form-note">No commitment. We respond fast.</div>
     </div>
   </div>
 </section>
