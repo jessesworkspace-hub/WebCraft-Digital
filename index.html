@@ -328,10 +328,26 @@ chat-widget{position:fixed;left:20px;bottom:20px;right:auto}
 @media(max-width:768px){#scbar{padding:10px 16px;gap:10px}.scb-txt{display:none}.scb-mid{gap:10px}}
 @media(max-width:480px){.scb-ph .scb-label{display:none}}
 
+/* GOOGLE PRESENCE */
+#gpr{background:var(--bg2)}
+.gphd{text-align:center;margin-bottom:64px}
+.gpbl{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.gpit{background:var(--bcard);border:1px solid var(--bd);padding:44px 36px;transition:border-color .3s,transform .3s;position:relative;overflow:hidden}
+.gpit::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,212,255,.05) 0%,transparent 60%);opacity:0;transition:opacity .4s}
+.gpit:hover{border-color:var(--bdb);transform:translateY(-4px)}
+.gpit:hover::before{opacity:1}
+.gpic{width:52px;height:52px;background:rgba(0,212,255,.08);border:1px solid var(--bdb);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:24px;transition:background .3s}
+.gpit:hover .gpic{background:rgba(0,212,255,.15)}
+.gpit h3{font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--wh);margin-bottom:14px}
+.gpit p{font-size:.92rem;color:var(--txd);line-height:1.7}
+.gpst{display:flex;align-items:center;justify-content:center;gap:64px;margin-top:64px;padding-top:48px;border-top:1px solid var(--bd)}
+.gpn{text-align:center}
+.gpnv{font-family:var(--fd);font-size:2.6rem;font-weight:900;color:var(--cy);line-height:1}
+.gpnl{font-size:.8rem;color:var(--txd);text-transform:uppercase;letter-spacing:.1em;margin-top:6px}
 /* RESPONSIVE */
-@media(max-width:1024px){.wrap{padding:0 28px}.hcon{grid-template-columns:1fr}.hri{display:none}.sgd{grid-template-columns:repeat(2,1fr)}.agd{grid-template-columns:1fr}.aim{display:none}.pgd{grid-template-columns:repeat(2,1fr)}.pi:first-child{grid-column:span 2}.prst{grid-template-columns:repeat(2,1fr);gap:50px}.prst::before{display:none}.prgd{grid-template-columns:1fr;max-width:480px;margin:0 auto}.prc.ft{transform:none}.fwp{grid-template-columns:1fr}.cwp{grid-template-columns:1fr}.ftp{grid-template-columns:1fr 1fr}.shdg{grid-template-columns:1fr;gap:20px}}
+@media(max-width:1024px){.wrap{padding:0 28px}.hcon{grid-template-columns:1fr}.hri{display:none}.sgd{grid-template-columns:repeat(2,1fr)}.agd{grid-template-columns:1fr}.aim{display:none}.pgd{grid-template-columns:repeat(2,1fr)}.pi:first-child{grid-column:span 2}.prst{grid-template-columns:repeat(2,1fr);gap:50px}.prst::before{display:none}.prgd{grid-template-columns:1fr;max-width:480px;margin:0 auto}.prc.ft{transform:none}.fwp{grid-template-columns:1fr}.cwp{grid-template-columns:1fr}.ftp{grid-template-columns:1fr 1fr}.shdg{grid-template-columns:1fr;gap:20px}.gpbl{grid-template-columns:1fr}.gpst{flex-wrap:wrap;gap:36px;justify-content:flex-start}}
 @media(max-width:768px){.nul,.ncta{display:none}.nbg{display:flex}.sec{padding:72px 0}.sgd{grid-template-columns:1fr}.pgd{grid-template-columns:1fr}.pi:first-child{grid-column:span 1}.prst{grid-template-columns:1fr 1fr}.ftp{grid-template-columns:1fr}.fr{grid-template-columns:1fr}.cfm{padding:32px 20px}.strow{grid-template-columns:1fr 1fr}.hac{flex-direction:column;align-items:flex-start}.bp,.bo{width:100%;justify-content:center}}
-@media(max-width:480px){.wrap{padding:0 18px}nav{padding:0 18px}.htl{font-size:2.2rem}.prst{grid-template-columns:1fr;gap:40px}.prst::before{display:none}.prs{padding:0}.strow{grid-template-columns:1fr}.ftp{gap:32px}.cfm{padding:28px 16px}.tshd h2,.prhd h2{font-size:1.8rem}}
+@media(max-width:480px){.wrap{padding:0 18px}nav{padding:0 18px}.htl{font-size:2.2rem}.prst{grid-template-columns:1fr;gap:40px}.prst::before{display:none}.prs{padding:0}.strow{grid-template-columns:1fr}.ftp{gap:32px}.cfm{padding:28px 16px}.tshd h2,.prhd h2{font-size:1.8rem}.gpst{flex-direction:column;align-items:flex-start;gap:24px}}
 </style>
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a1323c6b47a945bd72966bd" data-source="WEB_USER"></script>
 </head>
@@ -363,15 +379,15 @@ chat-widget{position:fixed;left:20px;bottom:20px;right:auto}
         <span class="ln"><span class="wd cy">Websites That</span></span>
         <span class="ln"><span class="wd">Win Customers</span></span>
       </h1>
-      <p class="hsb">WebCraft Digital creates high-performance, stunning websites for local service businesses  - built to rank, convert, and grow your revenue.</p>
+      <p class="hsb">WebCraft Digital builds high-performance websites, automates Google reviews, and manages your entire online presence — so local businesses rank higher, get more calls, and grow on autopilot.</p>
       <div class="hac">
         <a href="#ct" class="bp">Start My Project &rarr;</a>
         <a href="#pf" class="bo">View Our Work</a>
       </div>
       <div class="hbs">
         <div class="hbg"><span class="ck">&#10003;</span>Free preview built — no payment until you approve</div>
-        <div class="hbg"><span class="ck">&#10003;</span>Preview ready within 48 hours</div>
-        <div class="hbg"><span class="ck">&#10003;</span>100% custom built — no templates, ever</div>
+        <div class="hbg"><span class="ck">&#10003;</span>Google reviews on autopilot</div>
+        <div class="hbg"><span class="ck">&#10003;</span>Full online presence managed for you</div>
       </div>
     </div>
   </div>
@@ -383,19 +399,27 @@ chat-widget{position:fixed;left:20px;bottom:20px;right:auto}
   <div class="tkt">
     <span class="ti">Web Design <span style="opacity:.4">&#9670;</span></span>
     <span class="ti">Local SEO <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">Google Review Automation <span style="opacity:.4">&#9670;</span></span>
     <span class="ti">Mobile Responsive <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">Google Business Profile <span style="opacity:.4">&#9670;</span></span>
     <span class="ti">Fast Loading <span style="opacity:.4">&#9670;</span></span>
     <span class="ti">48-Hour Preview <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">5-Star Reviews <span style="opacity:.4">&#9670;</span></span>
     <span class="ti">Free Preview <span style="opacity:.4">&#9670;</span></span>
     <span class="ti">Custom Design <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">Online Presence Management <span style="opacity:.4">&#9670;</span></span>
     <span class="ti">Lead Generation <span style="opacity:.4">&#9670;</span></span>
     <span class="ti">Web Design <span style="opacity:.4">&#9670;</span></span>
     <span class="ti">Local SEO <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">Google Review Automation <span style="opacity:.4">&#9670;</span></span>
     <span class="ti">Mobile Responsive <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">Google Business Profile <span style="opacity:.4">&#9670;</span></span>
     <span class="ti">Fast Loading <span style="opacity:.4">&#9670;</span></span>
     <span class="ti">48-Hour Preview <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">5-Star Reviews <span style="opacity:.4">&#9670;</span></span>
     <span class="ti">Free Preview <span style="opacity:.4">&#9670;</span></span>
     <span class="ti">Custom Design <span style="opacity:.4">&#9670;</span></span>
+    <span class="ti">Online Presence Management <span style="opacity:.4">&#9670;</span></span>
     <span class="ti">Lead Generation <span style="opacity:.4">&#9670;</span></span>
   </div>
 </div>
@@ -406,9 +430,9 @@ chat-widget{position:fixed;left:20px;bottom:20px;right:auto}
     <div class="shdg rv">
       <div>
         <div class="lbl">What We Do</div>
-        <h2 class="h2">Everything Your Business<br><em>Needs Online</em></h2>
+        <h2 class="h2">Everything Your Business Needs to<br><em>Dominate Online</em></h2>
       </div>
-      <p class="desc">We handle everything from custom design to launch and beyond  - so you can focus on running your business.</p>
+      <p class="desc">From a custom website to automated Google reviews and full online presence management — we handle it all so you can focus on running your business.</p>
     </div>
     <div class="sgd">
       <div class="sc"><span class="sno">1</span><div class="si">&#127912;</div><h3>Custom Web Design</h3><p>Every site we build is 100% custom - no templates, no page builders. Hand-crafted to represent your business and convert visitors into calls.</p></div>
@@ -417,6 +441,8 @@ chat-widget{position:fixed;left:20px;bottom:20px;right:auto}
       <div class="sc"><span class="sno">4</span><div class="si">&#9889;</div><h3>Performance Optimized</h3><p>Lightning-fast load times mean more leads, better rankings, and customers who don&apos;t bounce before the page loads.</p></div>
       <div class="sc"><span class="sno">5</span><div class="si">&#128172;</div><h3>All the Right Pages</h3><p>Every site includes a contact form, services section, testimonials, FAQ, and service areas page - everything a local business needs to convert visitors.</p></div>
       <div class="sc"><span class="sno">6</span><div class="si">&#128295;</div><h3>Ongoing Support</h3><p>We stay with you after launch. Monthly maintenance keeps your site fast, updated, and secure for just $25/month.</p></div>
+      <div class="sc"><span class="sno">7</span><div class="si">&#11088;</div><h3>Google Review Automation</h3><p>We set up automated follow-up sequences that collect 5-star reviews from your customers hands-free. More reviews mean better Google rankings and more trust from new customers.</p></div>
+      <div class="sc"><span class="sno">8</span><div class="si">&#128204;</div><h3>Google Business Profile Management</h3><p>We optimize and actively manage your GBP listing — photos, posts, Q&amp;A, and services. A fully managed profile ranks higher in local search and turns more searchers into callers.</p></div>
     </div>
   </div>
 </section>
@@ -435,6 +461,7 @@ chat-widget{position:fixed;left:20px;bottom:20px;right:auto}
         <h2 class="h2">We&apos;re Obsessed With<br><em>Local Business Growth</em></h2>
         <p class="desc">We started WebCraft Digital with one mission: give local service businesses the same quality websites that big companies have  - without the big-agency price tag or the runaround.</p>
         <p class="desc" style="margin-top:18px">Every site we build is crafted with deep knowledge of what converts local visitors into paying customers. We know local SEO, we know what your competitors are doing wrong, and we know how to make you stand out.</p>
+        <p class="desc" style="margin-top:18px">Beyond websites, we now help businesses automate Google reviews and manage their entire Google Business Profile — so you rank higher, get more calls, and grow on autopilot.</p>
         <p class="desc" style="margin-top:18px">And with our free preview model, you see your finished website before you spend a dime.</p>
         <div class="strow">
           <div><div class="stnum"><span class="counter" data-target="150">0</span><span class="sfx">+</span></div><div class="stlb">Sites Launched</div></div>
@@ -459,6 +486,28 @@ chat-widget{position:fixed;left:20px;bottom:20px;right:auto}
       <div class="pi rv" onclick="window.open('preview-contractor.html','_blank')"><img src="screenshot-contractor.jpg" alt="Bianchi Custom Builds"><div class="pov"><div class="ptg">General Contractor &middot; Leads</div><div class="pnm">Bianchi Custom Builds</div></div><div class="par">&#8599;</div></div>
       <div class="pi rv" onclick="window.open('preview-hvac.html','_blank')"><img src="screenshot-hvac.jpg" alt="Frost Heating &amp; Cooling"><div class="pov"><div class="ptg">HVAC &middot; Service</div><div class="pnm">Frost Heating &amp; Cooling</div></div><div class="par">&#8599;</div></div>
       <div class="pi rv" onclick="window.open('preview-electrician.html','_blank')"><img src="screenshot-electrician.jpg" alt="Caruso Electric Co."><div class="pov"><div class="ptg">Electrician &middot; Lead Gen</div><div class="pnm">Caruso Electric Co.</div></div><div class="par">&#8599;</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GOOGLE PRESENCE -->
+<section id="gpr" class="sec">
+  <div class="wrap">
+    <div class="gphd rv">
+      <div class="lbl">Online Presence</div>
+      <h2 class="h2">We Don&apos;t Just Build Your Website —<br>We Help You <em>Own Google</em></h2>
+      <p class="desc" style="margin:0 auto;text-align:center;max-width:640px">A great website is step one. We go further — automating your reviews and managing your full Google presence so your business gets more visibility, more trust, and more calls every month.</p>
+    </div>
+    <div class="gpbl">
+      <div class="gpit rv"><div class="gpic">&#11088;</div><h3>Google Review Automation</h3><p>We set up automated, personalized follow-up sequences that request 5-star reviews from your customers at exactly the right moment — completely hands-free. More reviews mean better rankings and more trust from new customers searching for you.</p></div>
+      <div class="gpit rv" style="transition-delay:.1s"><div class="gpic">&#128204;</div><h3>Google Business Profile Management</h3><p>We optimize and actively manage your GBP listing — updating photos, writing posts, managing Q&amp;A, and refining your services. A fully managed profile ranks higher in the local map pack and converts more searchers into callers.</p></div>
+      <div class="gpit rv" style="transition-delay:.2s"><div class="gpic">&#127760;</div><h3>Full Online Presence Management</h3><p>Your website, your Google reviews, your GBP — all managed under one roof. We handle your entire digital footprint on autopilot so you can stay focused on doing the work you love.</p></div>
+    </div>
+    <div class="gpst rv">
+      <div class="gpn"><div class="gpnv">4.9&#9733;</div><div class="gpnl">Avg. Client Rating</div></div>
+      <div class="gpn"><div class="gpnv">3x</div><div class="gpnl">More Google Reviews</div></div>
+      <div class="gpn"><div class="gpnv">Top 3</div><div class="gpnl">Local Map Pack</div></div>
+      <div class="gpn"><div class="gpnv">100%</div><div class="gpnl">Hands-Free</div></div>
     </div>
   </div>
 </section>
@@ -522,6 +571,7 @@ chat-widget{position:fixed;left:20px;bottom:20px;right:auto}
         <div class="fi"><button class="fq" onclick="tf(this)">What does the $25/month maintenance cover?<span class="fc">+</span></button><div class="fa"><p>Our $25/month maintenance covers site updates, security patches, performance checks, and content changes. Just send us what you need updated and we handle it - no technical knowledge required.</p></div></div>
         <div class="fi"><button class="fq" onclick="tf(this)">What businesses do you typically work with?<span class="fc">+</span></button><div class="fa"><p>We specialize in local service businesses including landscapers, roofers, plumbers, HVAC companies, salons, barbers, and general contractors. If you serve customers in a local area, we&apos;re built for you.</p></div></div>
         <div class="fi"><button class="fq" onclick="tf(this)">What if I&apos;m not happy with the design?<span class="fc">+</span></button><div class="fa"><p>With our free preview model, you see your full website before paying anything. If you don&apos;t love it, you don&apos;t pay. Simple as that. We&apos;ve never had a client walk away unhappy.</p></div></div>
+        <div class="fi"><button class="fq" onclick="tf(this)">Do you help with Google reviews and Google Business Profile?<span class="fc">+</span></button><div class="fa"><p>Yes — this is now a core part of what we offer. We set up automated review collection sequences to get more 5-star Google reviews hands-free, and we fully manage your Google Business Profile — optimizing photos, posts, Q&amp;A, and services so you rank higher in local search and get more calls. It&apos;s all included or available as an add-on depending on your package.</p></div></div>
       </div>
     </div>
   </div>
@@ -591,7 +641,7 @@ chat-widget{position:fixed;left:20px;bottom:20px;right:auto}
         </a>
         <p>We build high-performance websites for local service businesses  - designed to rank in Google, convert visitors, and grow your revenue.</p>
       </div>
-      <div class="fcl"><h4>Services</h4><ul><li><a href="#srv">Custom Web Design</a></li><li><a href="#srv">Free Preview</a></li><li><a href="#srv">Mobile Optimization</a></li><li><a href="#srv">All-Inclusive Pages</a></li><li><a href="#srv">Ongoing Support</a></li></ul></div>
+      <div class="fcl"><h4>Services</h4><ul><li><a href="#srv">Custom Web Design</a></li><li><a href="#srv">Free Preview</a></li><li><a href="#gpr">Google Review Automation</a></li><li><a href="#gpr">Google Business Profile</a></li><li><a href="#srv">Ongoing Support</a></li></ul></div>
       <div class="fcl"><h4>Company</h4><ul><li><a href="#abt">About Us</a></li><li><a href="#pf">Our Work</a></li><li><a href="#tst">Reviews</a></li><li><a href="#faq">FAQ</a></li><li><a href="#ct">Contact</a></li></ul></div>
       <div class="fcl"><h4>Resources</h4><ul><li><a href="#ct">Free SEO Audit</a></li><li><a href="#ct">Website Checklist</a></li><li><a href="#ct">Blog</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li></ul></div>
     </div>
