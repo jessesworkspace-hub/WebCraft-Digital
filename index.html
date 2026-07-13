@@ -145,35 +145,6 @@ nav.sc{box-shadow:0 1px 0 var(--bdb)}
 .prs h3{font-family:var(--fd);font-size:1.15rem;font-weight:700;color:var(--wh);margin-bottom:12px}
 .prs p{font-size:.88rem;color:var(--txd);line-height:1.7}
 
-/* TESTIMONIALS */
-#tst{background:var(--lbg);overflow:hidden}
-#tst .tshd .h2{color:var(--ltx)}
-#tst .tshd .desc{color:var(--ltxd)}
-#tst .tswp::before{background:linear-gradient(90deg,var(--lbg),transparent)}
-#tst .tswp::after{background:linear-gradient(-90deg,var(--lbg),transparent)}
-#tst .tc{background:var(--wh);border-color:var(--lbd);box-shadow:0 4px 20px rgba(0,0,0,.06)}
-#tst .tc:hover{border-color:var(--lbdb)}
-#tst .tt{color:var(--ltxd)}
-#tst .tnm{color:var(--ltx)}
-.tshd{text-align:center;margin-bottom:60px}
-.tshd .desc{margin:0 auto}
-.tswp{overflow:hidden;position:relative}
-.tswp::before,.tswp::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
-.tswp::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
-.tswp::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent)}
-.tstr{display:flex;gap:28px;padding:20px 0;animation:ts 35s linear infinite;width:max-content}
-.tstr:hover{animation-play-state:paused}
-@keyframes ts{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.tc{background:var(--bcard);border:1px solid var(--bd);border-radius:4px;padding:32px 36px;width:380px;flex-shrink:0;transition:border-color .3s}
-.tc:hover{border-color:var(--bdb)}
-.tq{font-size:2rem;color:var(--cy);line-height:1;font-family:var(--fd);margin-bottom:18px;opacity:.5}
-.tt{font-size:.95rem;color:var(--txd);line-height:1.75;margin-bottom:28px}
-.tau{display:flex;align-items:center;gap:14px}
-.tav{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--bdb);flex-shrink:0}
-.tnm{font-weight:600;font-size:.9rem;color:var(--wh)}
-.tbz{font-size:.78rem;color:var(--cy)}
-.tst{color:#ffd700;font-size:.75rem;letter-spacing:2px;margin-bottom:2px}
-
 
 /* FAQ */
 #faq{background:var(--bg2)}
@@ -529,31 +500,6 @@ chat-widget{position:fixed;left:20px;bottom:20px;right:auto}
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="tst" class="sec" style="padding-bottom:0">
-  <div class="wrap">
-    <div class="tshd rv">
-      <div class="lbl">Client Stories</div>
-      <h2 class="h2">Businesses That <em>Trust Us</em></h2>
-      <p class="desc">Don&apos;t take our word for it  - here&apos;s what real local business owners say.</p>
-    </div>
-  </div>
-  <div class="tswp" style="margin-top:60px;padding-bottom:120px">
-    <div class="tstr">
-      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">Our phone hasn&apos;t stopped ringing since the new site launched. WebCraft delivered something incredible, and we&apos;re now #1 in Google for our area.</p><div class="tau"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&q=80" class="tav" alt="Mike T."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">Mike Torres</div><div class="tbz">Torres HVAC Services</div></div></div></div>
-      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">I was hesitant to invest in a website but WebCraft made it so easy. The site looks incredible and my bookings doubled in the first 60 days. Worth every penny.</p><div class="tau"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&q=80" class="tav" alt="Sarah K."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">Sarah Kim</div><div class="tbz">Kim&apos;s Beauty Bar</div></div></div></div>
-      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">Professional from first call to launch. Two weeks exactly like they promised. Fast, looks great on phones, and customers always comment on it.</p><div class="tau"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=96&q=80" class="tav" alt="James R."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">James Reeves</div><div class="tbz">Reeves Landscaping</div></div></div></div>
-      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">WebCraft built us a site that brings in roofing leads every week. Professional, fast, and the free preview made the decision easy.</p><div class="tau"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=96&q=80" class="tav" alt="Carlos R."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">Carlos Rivera</div><div class="tbz">Rivera Roofing</div></div></div></div>
-      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">WebCraft built us a site that actually converts. Most of our new leads come through the contact form now. The ROI is undeniable.</p><div class="tau"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&q=80" class="tav" alt="Tom G."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">Tom Garrett</div><div class="tbz">Garrett General Contracting</div></div></div></div>
-      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">Our phone hasn&apos;t stopped ringing since the new site launched. WebCraft delivered something incredible, and we&apos;re now #1 in Google for our area.</p><div class="tau"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&q=80" class="tav" alt="Mike T."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">Mike Torres</div><div class="tbz">Torres HVAC Services</div></div></div></div>
-      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">I was hesitant to invest in a website but WebCraft made it so easy. The site looks incredible and my bookings doubled in the first 60 days. Worth every penny.</p><div class="tau"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&q=80" class="tav" alt="Sarah K."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">Sarah Kim</div><div class="tbz">Kim&apos;s Beauty Bar</div></div></div></div>
-      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">Professional from first contact to launch. Fast, looks great on phones, and customers always comment on it.</p><div class="tau"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=96&q=80" class="tav" alt="James R."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">James Reeves</div><div class="tbz">Reeves Landscaping</div></div></div></div>
-      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">WebCraft built us a site that brings in roofing leads every week. Professional, fast, and the free preview made the decision easy.</p><div class="tau"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=96&q=80" class="tav" alt="Carlos R."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">Carlos Rivera</div><div class="tbz">Rivera Roofing</div></div></div></div>
-      <div class="tc"><div class="tq">&ldquo;</div><p class="tt">WebCraft built us a site that actually converts. Most of our new leads come through the contact form now. The ROI is undeniable.</p><div class="tau"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&q=80" class="tav" alt="Tom G."><div><div class="tst">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tnm">Tom Garrett</div><div class="tbz">Garrett General Contracting</div></div></div></div>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section id="faq" class="sec light">
   <div class="wrap">
@@ -642,7 +588,7 @@ chat-widget{position:fixed;left:20px;bottom:20px;right:auto}
         <p>We build high-performance websites for local service businesses  - designed to rank in Google, convert visitors, and grow your revenue.</p>
       </div>
       <div class="fcl"><h4>Services</h4><ul><li><a href="#srv">Custom Web Design</a></li><li><a href="#srv">Free Preview</a></li><li><a href="#gpr">Google Review Automation</a></li><li><a href="#gpr">Google Business Profile</a></li><li><a href="#srv">Ongoing Support</a></li></ul></div>
-      <div class="fcl"><h4>Company</h4><ul><li><a href="#abt">About Us</a></li><li><a href="#pf">Our Work</a></li><li><a href="#tst">Reviews</a></li><li><a href="#faq">FAQ</a></li><li><a href="#ct">Contact</a></li></ul></div>
+      <div class="fcl"><h4>Company</h4><ul><li><a href="#abt">About Us</a></li><li><a href="#pf">Our Work</a></li><li><a href="#pf">Reviews</a></li><li><a href="#faq">FAQ</a></li><li><a href="#ct">Contact</a></li></ul></div>
       <div class="fcl"><h4>Resources</h4><ul><li><a href="#ct">Free SEO Audit</a></li><li><a href="#ct">Website Checklist</a></li><li><a href="#ct">Blog</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li></ul></div>
     </div>
     <div class="fbt"><span>&copy; 2026 WebCraft Digital. All rights reserved.</span><span>Built with &hearts; for local businesses</span></div>
